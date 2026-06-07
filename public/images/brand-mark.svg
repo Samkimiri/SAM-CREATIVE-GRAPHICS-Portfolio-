@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title">
+  <title id="title">Sam Creative Graphics brand mark</title>
+  <rect width="240" height="240" rx="52" fill="#141217"/>
+  <path d="M70 72h92c18 0 32 14 32 32v66H89c-25 0-43-18-43-43V96c0-13 11-24 24-24Z" fill="#F24E1E"/>
+  <path d="M94 46h70c17 0 30 13 30 30v80h-70c-17 0-30-13-30-30V46Z" fill="#5B2EFF"/>
+  <path d="M48 137c0-25 20-45 45-45h56v101H93c-25 0-45-20-45-45v-11Z" fill="#00B37E"/>
+  <path d="M92 125h70v23H92c-9 0-16-7-16-16s7-16 16-16h44c8 0 14-6 14-14s-6-14-14-14H77V66h59c20 0 36 16 36 36s-16 36-36 36H92c-4 0-7 3-7 7s3 7 7 7Z" fill="#FFF8F4"/>
+  <circle cx="176" cy="176" r="18" fill="#FFB624"/>
+</svg>

@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env
+.env.local
+.vercel
+data/contact-submissions.json
+*.tsbuildinfo
+.DS_Store
