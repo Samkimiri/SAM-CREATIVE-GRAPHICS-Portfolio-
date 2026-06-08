@@ -8,6 +8,8 @@ Premium full-stack agency website for Sam Creative Graphics, a Nairobi-based bra
 - Sticky navigation and conversion-focused homepage sections
 - Services, portfolio, testimonials, about, and contact sections
 - Contact form with server-side validation and honeypot spam protection
+- Owner project upload dashboard at `/admin/projects`
+- Public portfolio section powered by uploaded project records
 - API routes for contact, services, portfolio, and testimonials
 - MongoDB storage when configured, JSON fallback for local development
 - Optional SMTP email notification with Nodemailer
@@ -36,11 +38,14 @@ SMTP_USER=
 SMTP_PASS=
 CONTACT_TO_EMAIL=samkimiri550307@gmail.com
 CONTACT_FROM_EMAIL=hello@samcreativegraphics.co.ke
+ADMIN_UPLOAD_PASSWORD=change-this-owner-password
 ```
 
 If `MONGODB_URI` is empty, contact submissions are saved to `data/contact-submissions.json` for local development.
 
 If SMTP values are empty, email notifications are skipped but submissions still save.
+
+Set `ADMIN_UPLOAD_PASSWORD` in Vercel. The owner uses that password on `/admin/projects` to upload portfolio projects without editing code.
 
 ## API Routes
 
@@ -48,6 +53,7 @@ If SMTP values are empty, email notifications are skipped but submissions still 
 - `GET /api/services`
 - `GET /api/portfolio`
 - `GET /api/testimonials`
+- `POST /api/admin/projects`
 
 ## Deployment
 

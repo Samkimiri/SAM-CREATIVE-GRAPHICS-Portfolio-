@@ -6,7 +6,7 @@ export default function Testimonials() {
     <section id="testimonials" className="bg-charcoal py-24 text-white">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-widest text-amber">Testimonials</p>
+          <p className="text-sm font-black uppercase tracking-widest text-rainbow">Testimonials</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
             Trusted by founders, teams, and growing organizations.
           </h2>
@@ -14,7 +14,7 @@ export default function Testimonials() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map((testimonial) => (
             <article key={testimonial.name} className="rounded-3xl border border-white/10 bg-white/8 p-6 backdrop-blur">
-              <div className="mb-6 flex gap-1 text-amber">
+              <div className="mb-6 flex gap-1 text-rainbow">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star key={index} className="h-5 w-5 fill-current" />
                 ))}

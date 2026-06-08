@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Where Creativity Meets Strategy. Premium brand design, campaigns, print, packaging, UI/UX, and web design.",
     url: siteUrl,
     siteName: "Sam Creative Graphics",
-    images: [{ url: "/images/brand-mark.svg", width: 1200, height: 1200, alt: "Sam Creative Graphics brand mark" }],
+    images: [{ url: "/images/logo.jpg", width: 1080, height: 1080, alt: "Sam Creative Graphics logo" }],
     locale: "en_KE",
     type: "website",
   },
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sam Creative Graphics",
     description: "Premium brand design agency in Nairobi, Kenya.",
-    images: ["/images/brand-mark.svg"],
+    images: ["/images/logo.jpg"],
   },
   icons: {
-    icon: "/images/brand-mark.svg",
-    apple: "/images/brand-mark.svg",
+    icon: "/images/logo.jpg",
+    apple: "/images/logo.jpg",
   },
 };
 

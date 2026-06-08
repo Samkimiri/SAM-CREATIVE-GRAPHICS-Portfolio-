@@ -5,14 +5,14 @@ export const services = [
     title: "Brand Identity & Logos",
     slug: "brand-identity",
     description: "Strategic logos, visual systems, brand guidelines, and identity assets built for recall and trust.",
-    accent: "#F24E1E",
+    accent: "#2F9CEB",
     Icon: Brush,
   },
   {
     title: "Social Media Design",
     slug: "social-media-design",
     description: "Professional posters, campaign graphics, launch creatives, and digital content for consistent visibility.",
-    accent: "#5B2EFF",
+    accent: "#F24E1E",
     Icon: Layers,
   },
   {
@@ -26,7 +26,7 @@ export const services = [
     title: "UI/UX & Web Design",
     slug: "ui-ux-web-design",
     description: "Clean interfaces, landing pages, websites, and digital experiences designed around conversion.",
-    accent: "#00B37E",
+    accent: "#14C7E8",
     Icon: MonitorSmartphone,
   },
 ];

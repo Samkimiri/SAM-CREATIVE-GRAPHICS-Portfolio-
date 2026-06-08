@@ -5,7 +5,7 @@ export default function Services() {
     <section id="services" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-widest text-orange">Services</p>
+          <p className="text-sm font-black uppercase tracking-widest text-skybrand">Services</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal md:text-5xl">
             Creative services built for visibility, trust, and business growth.
           </h2>
