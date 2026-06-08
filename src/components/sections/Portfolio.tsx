@@ -2,6 +2,8 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
 
+const whatsappCatalogUrl = "https://wa.me/c/254743475247";
+
 const gradients = [
   "from-skybrand to-rainbow",
   "from-cobalt to-coral",
@@ -21,12 +23,38 @@ export default async function Portfolio() {
           <div className="max-w-3xl">
             <p className="text-sm font-black uppercase tracking-widest text-coral">Portfolio</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal md:text-5xl">
-              Work samples shaped for real brands, real markets, and strong first impressions.
+              Live brand work shaped for real clients, clear markets, and strong first impressions.
             </h2>
           </div>
-          <p className="max-w-sm text-sm font-bold leading-6 text-charcoal/60">
-            Each concept shows how strategy, color, hierarchy, and consistency come together across brand touchpoints.
-          </p>
+          <div className="max-w-sm">
+            <p className="text-sm font-bold leading-6 text-charcoal/60">
+              Browse selected uploads here, or open the full WhatsApp catalog for the latest project photos and design samples.
+            </p>
+            <a
+              href={whatsappCatalogUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-charcoal px-5 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-skybrand"
+            >
+              View WhatsApp Catalog
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-4 rounded-[2rem] border border-skybrand/15 bg-white p-5 shadow-sm md:grid-cols-[0.8fr_1.2fr] md:p-6">
+          <div className="rounded-3xl bg-gradient-to-br from-skybrand via-aqua to-rainbow p-5 text-white">
+            <p className="text-xs font-black uppercase tracking-widest text-white/80">Live Catalog Source</p>
+            <h3 className="mt-8 text-3xl font-black leading-tight">Fresh work is published first on WhatsApp.</h3>
+          </div>
+          <div className="flex flex-col justify-center">
+            <p className="text-lg font-extrabold leading-8 text-charcoal">
+              The website portfolio is now connected to a professional upload backend. Use `/admin/projects` to add the best photos from the WhatsApp catalog into the homepage without editing code.
+            </p>
+            <p className="mt-3 text-sm font-bold leading-6 text-charcoal/55">
+              WhatsApp requires login before exposing catalog media, so direct automatic extraction is blocked here. The upload dashboard is the reliable production path.
+            </p>
+          </div>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -55,10 +83,16 @@ export default async function Portfolio() {
                   <span className="w-fit rounded-full bg-white/90 px-4 py-2 text-xs font-black uppercase tracking-widest text-charcoal">
                     {item.category}
                   </span>
-                  <button className="flex w-fit items-center gap-2 rounded-full bg-charcoal px-4 py-2 text-sm font-extrabold text-white opacity-0 transition group-hover:opacity-100">
+                  <a
+                    href={whatsappCatalogUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex w-fit items-center gap-2 rounded-full bg-charcoal px-4 py-2 text-sm font-extrabold text-white opacity-0 transition group-hover:opacity-100"
+                    aria-label={`View ${item.title} in the WhatsApp catalog`}
+                  >
                     View Project
                     <ArrowUpRight className="h-4 w-4" />
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="p-6">

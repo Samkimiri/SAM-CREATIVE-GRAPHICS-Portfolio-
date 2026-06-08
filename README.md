@@ -10,6 +10,7 @@ Premium full-stack agency website for Sam Creative Graphics, a Nairobi-based bra
 - Contact form with server-side validation and honeypot spam protection
 - Owner project upload dashboard at `/admin/projects`
 - Public portfolio section powered by uploaded project records
+- Professional WhatsApp catalog CTA connected to `https://wa.me/c/254743475247`
 - API routes for contact, services, portfolio, and testimonials
 - MongoDB storage when configured, JSON fallback for local development
 - Optional SMTP email notification with Nodemailer

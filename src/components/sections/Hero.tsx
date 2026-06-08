@@ -30,6 +30,14 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="#portfolio">View Our Work</ButtonLink>
             <ButtonLink href="#contact" variant="outline">Talk to Us</ButtonLink>
+            <a
+              href="https://wa.me/c/254743475247"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-skybrand/25 bg-white px-6 py-3 text-sm font-extrabold text-skybrand transition duration-300 hover:-translate-y-0.5 hover:bg-skybrand hover:text-white"
+            >
+              WhatsApp Catalog
+            </a>
           </div>
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {stats.map(([value, label]) => (
