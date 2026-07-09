@@ -60,16 +60,20 @@ async function writeLocalProjects(projects: ProjectRecord[]) {
 }
 
 export async function getProjects() {
-  const client = await getMongoClient();
-  if (client) {
-    const dbName = process.env.MONGODB_DB || "sam_creative_graphics";
-    const projects = await client
-      .db(dbName)
-      .collection<ProjectRecord>("projects")
-      .find({})
-      .sort({ createdAt: -1 })
-      .toArray();
-    return projects.length ? projects : fallbackProjects();
+  try {
+    const client = await getMongoClient();
+    if (client) {
+      const dbName = process.env.MONGODB_DB || "sam_creative_graphics";
+      const projects = await client
+        .db(dbName)
+        .collection<ProjectRecord>("projects")
+        .find({})
+        .sort({ createdAt: -1 })
+        .toArray();
+      return projects.length ? projects : fallbackProjects();
+    }
+  } catch (error) {
+    console.error("Project database read failed", error);
   }
 
   const localProjects = await readLocalProjects();

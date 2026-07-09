@@ -6,6 +6,8 @@ import Portfolio from "@/components/sections/Portfolio";
 import Services from "@/components/sections/Services";
 import Testimonials from "@/components/sections/Testimonials";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <main>
