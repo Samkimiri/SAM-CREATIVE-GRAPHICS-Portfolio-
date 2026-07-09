@@ -43,22 +43,27 @@ export default function Contact() {
     setStatus("loading");
     setMessage("");
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-    const data = (await response.json()) as { message?: string };
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await response.json()) as { message?: string };
 
-    if (!response.ok) {
+      if (!response.ok) {
+        setStatus("error");
+        setMessage(data.message || "Please check your details and try again.");
+        return;
+      }
+
+      setStatus("success");
+      setMessage(data.message || "Your request has been received.");
+      setForm(initialState);
+    } catch {
       setStatus("error");
-      setMessage(data.message || "Please check your details and try again.");
-      return;
+      setMessage("We could not send your quote request. Please try again or contact us directly.");
     }
-
-    setStatus("success");
-    setMessage(data.message || "Your request has been received.");
-    setForm(initialState);
   };
 
   return (
@@ -70,7 +75,7 @@ export default function Contact() {
             Tell us what you are building. We will help shape how it looks and feels.
           </h2>
 
-          <form onSubmit={submitForm} className="glass-card-light mt-10 grid gap-4 p-5 md:p-7">
+          <form id="request-quote" onSubmit={submitForm} className="glass-card-light mt-10 grid gap-4 p-5 md:p-7">
             <input
               className="hidden"
               tabIndex={-1}

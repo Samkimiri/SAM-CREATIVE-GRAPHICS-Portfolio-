@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="#portfolio">View Our Work</ButtonLink>
             <a
-              href="#contact"
+              href="#request-quote"
               className="inline-flex items-center justify-center rounded-full border border-white/45 bg-white/10 px-6 py-3 text-sm font-extrabold text-white backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-charcoal"
             >
               Talk to Us

@@ -44,7 +44,7 @@ export default function Footer() {
         <FooterColumn title="Services" items={services} />
         <div>
           <p className="font-black">Connect</p>
-          <div className="mt-5 flex gap-3">
+          <div className="mt-5 flex flex-wrap gap-3">
             {contactLinks.map(({ label, href, Icon }) => (
               <Link
                 key={label}
@@ -52,14 +52,15 @@ export default function Footer() {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noreferrer" : undefined}
                 aria-label={label}
-                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/70 transition duration-300 hover:-translate-y-0.5 hover:border-skybrand/50 hover:bg-white/10 hover:text-skybrand"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2.5 text-sm font-bold text-white/78 transition duration-300 hover:-translate-y-0.5 hover:border-skybrand/50 hover:bg-white/10 hover:text-skybrand"
               >
                 <Icon className="h-4 w-4" />
+                <span>{label}</span>
               </Link>
             ))}
           </div>
           <Link
-            href="#contact"
+            href="#request-quote"
             className="mt-5 inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-extrabold text-white/80 transition duration-300 hover:-translate-y-0.5 hover:border-rainbow/50 hover:bg-rainbow hover:text-charcoal"
           >
             Start a project
