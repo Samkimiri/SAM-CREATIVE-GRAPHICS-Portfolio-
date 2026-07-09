@@ -48,6 +48,18 @@ If SMTP values are empty, email notifications are skipped but submissions still 
 
 Set `ADMIN_UPLOAD_PASSWORD` in Vercel. The owner uses that password on `/admin/projects` to upload portfolio projects without editing code.
 
+## Admin Design Uploads
+
+Open `/admin/projects` to add designs to the homepage portfolio.
+
+- Enter the owner password from `ADMIN_UPLOAD_PASSWORD`
+- Upload a compressed image below 1.1MB or paste an HTTPS image URL
+- Choose a category, or select `Other` to enter a custom category
+- Set image focus if the preview crop needs adjusting
+- Click `Load Uploaded Designs` to view or delete existing uploads
+
+For production hosting, configure `MONGODB_URI` so uploaded designs persist permanently. Without MongoDB, uploads are saved to `data/projects.json`, which is suitable for local development but may not persist on serverless hosting.
+
 ## API Routes
 
 - `POST /api/contact`

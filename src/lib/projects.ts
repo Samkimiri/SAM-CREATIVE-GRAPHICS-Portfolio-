@@ -46,7 +46,11 @@ function fallbackProjects(): ProjectRecord[] {
 async function readLocalProjects() {
   const filePath = path.join(process.cwd(), "data", "projects.json");
   const current = await fs.readFile(filePath, "utf8").catch(() => "[]");
-  return JSON.parse(current) as ProjectRecord[];
+  try {
+    return JSON.parse(current) as ProjectRecord[];
+  } catch {
+    return [];
+  }
 }
 
 async function writeLocalProjects(projects: ProjectRecord[]) {
@@ -72,6 +76,21 @@ export async function getProjects() {
   return localProjects.length ? localProjects : fallbackProjects();
 }
 
+export async function getStoredProjects() {
+  const client = await getMongoClient();
+  if (client) {
+    const dbName = process.env.MONGODB_DB || "sam_creative_graphics";
+    return client
+      .db(dbName)
+      .collection<ProjectRecord>("projects")
+      .find({})
+      .sort({ createdAt: -1 })
+      .toArray();
+  }
+
+  return readLocalProjects();
+}
+
 export async function createProject(input: Record<string, unknown>) {
   const project: ProjectRecord = {
     id: `project_${Date.now()}_${Math.random().toString(16).slice(2)}`,
@@ -79,6 +98,7 @@ export async function createProject(input: Record<string, unknown>) {
     category: clean(input.category, 90),
     description: clean(input.description, 700),
     imageUrl: clean(input.imageUrl, 1_500_000),
+    imagePosition: clean(input.imagePosition, 40) || "center",
     featured: Boolean(input.featured ?? true),
     createdAt: new Date().toISOString(),
   };
@@ -87,6 +107,7 @@ export async function createProject(input: Record<string, unknown>) {
   if (!project.title) errors.title = "Project title is required.";
   if (!project.category) errors.category = "Project category is required.";
   if (project.description.length < 12) errors.description = "Description should be at least 12 characters.";
+  if (!project.imageUrl) errors.imageUrl = "Upload a project image or paste a valid image URL.";
   if (project.imageUrl && !project.imageUrl.startsWith("data:image/") && !project.imageUrl.startsWith("https://")) {
     errors.imageUrl = "Use an uploaded image or valid HTTPS image URL.";
   }
@@ -104,6 +125,24 @@ export async function createProject(input: Record<string, unknown>) {
   projects.unshift(project);
   await writeLocalProjects(projects);
   return { valid: true, errors: {}, project };
+}
+
+export async function deleteProject(id: string) {
+  const projectId = clean(id, 160);
+  if (!projectId) return false;
+
+  const client = await getMongoClient();
+  if (client) {
+    const dbName = process.env.MONGODB_DB || "sam_creative_graphics";
+    const result = await client.db(dbName).collection<ProjectRecord>("projects").deleteOne({ id: projectId });
+    return result.deletedCount > 0;
+  }
+
+  const projects = await readLocalProjects();
+  const nextProjects = projects.filter((project) => project.id !== projectId);
+  if (nextProjects.length === projects.length) return false;
+  await writeLocalProjects(nextProjects);
+  return true;
 }
 
 export function isAuthorizedProjectAdmin(request: Request) {

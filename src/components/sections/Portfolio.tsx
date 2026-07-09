@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
@@ -12,6 +14,38 @@ const gradients = [
   "from-charcoal to-skybrand",
   "from-coral to-rainbow",
 ];
+
+function PortfolioImage({
+  src,
+  alt,
+  objectPosition = "center",
+}: {
+  src: string;
+  alt: string;
+  objectPosition?: string;
+}) {
+  if (src.startsWith("/")) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+        className="object-cover transition duration-500 group-hover:scale-105"
+        style={{ objectPosition }}
+      />
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      style={{ objectPosition }}
+    />
+  );
+}
 
 export default async function Portfolio() {
   const portfolioItems = await getProjects();
@@ -77,14 +111,10 @@ export default async function Portfolio() {
             >
               <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${gradients[index % gradients.length]} p-6`}>
                 {item.imageUrl ? (
-                  <Image
+                  <PortfolioImage
                     src={item.imageUrl}
                     alt={item.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                    style={{ objectPosition: item.imagePosition || "center" }}
-                    unoptimized={item.imageUrl.startsWith("data:")}
+                    objectPosition={item.imagePosition || "center"}
                   />
                 ) : (
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.24)_0_25%,transparent_25%_50%,rgba(255,255,255,0.14)_50%_75%,transparent_75%)] bg-[length:36px_36px] opacity-70" />
