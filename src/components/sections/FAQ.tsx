@@ -30,11 +30,11 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="bg-soft py-24">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+    <section id="faq" className="bg-soft py-16 sm:py-24">
+      <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-widest text-skybrand">FAQ</p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal md:text-5xl">
+          <h2 className="section-title mt-3">
             Clear answers before we start building your brand.
           </h2>
           <p className="mt-5 text-lg leading-8 text-charcoal/68">
@@ -44,9 +44,9 @@ export default function FAQ() {
 
         <div className="grid gap-4">
           {faqs.map((item) => (
-            <article key={item.question} className="border border-charcoal/10 bg-white p-6 shadow-sm">
+            <article key={item.question} className="group glass-card-light modern-hover p-5 sm:p-6">
               <div className="flex gap-4">
-                <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-skybrand/10 text-skybrand">
+                <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-skybrand/10 text-skybrand transition duration-300 group-hover:bg-skybrand group-hover:text-white">
                   <HelpCircle className="h-5 w-5" />
                 </div>
                 <div>

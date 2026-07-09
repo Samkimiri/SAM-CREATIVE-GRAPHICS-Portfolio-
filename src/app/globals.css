@@ -29,3 +29,40 @@ select,
 textarea {
   font: inherit;
 }
+
+@layer base {
+  html {
+    scroll-padding-top: 92px;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl font-black tracking-tight text-charcoal sm:text-4xl md:text-5xl;
+  }
+
+  .glass-card {
+    @apply border border-white/18 bg-white/12 shadow-sm backdrop-blur-xl;
+  }
+
+  .glass-card-light {
+    @apply border border-charcoal/10 bg-white/72 shadow-sm backdrop-blur-xl;
+  }
+
+  .modern-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-skybrand/35 hover:shadow-premium;
+  }
+
+  .link-hover {
+    @apply transition duration-300 hover:-translate-y-0.5 hover:text-skybrand;
+  }
+}

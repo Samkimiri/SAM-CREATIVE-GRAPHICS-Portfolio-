@@ -62,15 +62,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-white py-24">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+    <section id="contact" className="bg-white py-16 sm:py-24">
+      <div className="section-shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-widest text-skybrand">Contact</p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal md:text-5xl">
+          <h2 className="section-title mt-3">
             Tell us what you are building. We will help shape how it looks and feels.
           </h2>
 
-          <form onSubmit={submitForm} className="mt-10 grid gap-4 rounded-3xl border border-charcoal/10 bg-soft p-5 shadow-sm md:p-7">
+          <form onSubmit={submitForm} className="glass-card-light mt-10 grid gap-4 p-5 md:p-7">
             <input
               className="hidden"
               tabIndex={-1}
@@ -85,7 +85,7 @@ export default function Contact() {
                 value={form.name}
                 onChange={(event) => updateField("name", event.target.value)}
                 placeholder="Name"
-                className="rounded-2xl border border-charcoal/10 bg-white px-4 py-4 font-bold outline-none transition focus:border-skybrand"
+                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               />
               <input
                 required
@@ -93,7 +93,7 @@ export default function Contact() {
                 value={form.email}
                 onChange={(event) => updateField("email", event.target.value)}
                 placeholder="Email"
-                className="rounded-2xl border border-charcoal/10 bg-white px-4 py-4 font-bold outline-none transition focus:border-skybrand"
+                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               />
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -102,13 +102,13 @@ export default function Contact() {
                 value={form.phone}
                 onChange={(event) => updateField("phone", event.target.value)}
                 placeholder="Phone"
-                className="rounded-2xl border border-charcoal/10 bg-white px-4 py-4 font-bold outline-none transition focus:border-skybrand"
+                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               />
               <select
                 required
                 value={form.service}
                 onChange={(event) => updateField("service", event.target.value)}
-                className="rounded-2xl border border-charcoal/10 bg-white px-4 py-4 font-bold outline-none transition focus:border-skybrand"
+                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               >
                 <option value="">Service Needed</option>
                 {serviceOptions.map((service) => (
@@ -122,12 +122,12 @@ export default function Contact() {
               value={form.message}
               onChange={(event) => updateField("message", event.target.value)}
               placeholder="Tell us about your project"
-              className="resize-none rounded-2xl border border-charcoal/10 bg-white px-4 py-4 font-bold outline-none transition focus:border-skybrand"
+              className="resize-none rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-skybrand px-6 py-4 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-charcoal disabled:opacity-60"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-skybrand px-6 py-4 text-sm font-black text-white shadow-lg shadow-skybrand/20 transition hover:-translate-y-0.5 hover:bg-charcoal disabled:opacity-60"
             >
               {status === "loading" ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
               Submit Request
@@ -141,12 +141,12 @@ export default function Contact() {
           </form>
         </div>
 
-        <aside className="rounded-[2rem] bg-charcoal p-7 text-white shadow-premium">
+        <aside className="glass-card modern-hover bg-charcoal/95 p-5 text-white shadow-premium sm:p-7">
           <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-widest text-rainbow">
             <Sparkles className="h-4 w-4" />
             Open for projects
           </p>
-          <h3 className="mt-8 text-3xl font-black">Branding, design, and digital work from Nairobi to East Africa.</h3>
+          <h3 className="mt-8 text-2xl font-black sm:text-3xl">Branding, design, and digital work from Nairobi to East Africa.</h3>
           <div className="mt-10 grid gap-4">
             <ContactItem Icon={Mail} label="Email" value="samkimiri550307@gmail.com" />
             <ContactItem Icon={Phone} label="Phone" value="0743 475 247 / 0748 201 131" />
@@ -161,7 +161,7 @@ export default function Contact() {
 
 function ContactItem({ Icon, label, value }: { Icon: typeof Mail; label: string; value: string }) {
   return (
-    <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/8 p-4">
+    <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/8 p-4 transition duration-300 hover:border-rainbow/35 hover:bg-white/12">
       <Icon className="mt-1 h-5 w-5 shrink-0 text-rainbow" />
       <div>
         <p className="text-xs font-black uppercase tracking-widest text-white/45">{label}</p>

@@ -9,9 +9,9 @@ type ButtonLinkProps = {
 
 export default function ButtonLink({ href, children, variant = "filled" }: ButtonLinkProps) {
   const styles = {
-    filled: "bg-skybrand text-white shadow-lg shadow-skybrand/25 hover:bg-charcoal",
-    outline: "border border-charcoal/15 bg-white text-charcoal hover:border-skybrand hover:text-skybrand",
-    dark: "bg-charcoal text-white hover:bg-cobalt",
+    filled: "bg-skybrand text-white shadow-lg shadow-skybrand/25 hover:bg-charcoal hover:shadow-premium",
+    outline: "border border-charcoal/15 bg-white/80 text-charcoal backdrop-blur hover:border-skybrand hover:text-skybrand hover:shadow-glow",
+    dark: "bg-charcoal text-white hover:bg-cobalt hover:shadow-premium",
   };
 
   return (

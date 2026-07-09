@@ -18,20 +18,25 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-charcoal/10 bg-white/88 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/30 bg-white/78 shadow-sm backdrop-blur-xl">
+      <nav className="section-shell flex items-center justify-between py-3 lg:py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo.jpg" alt="Sam Creative Graphics" width={54} height={54} className="rounded-2xl object-contain" />
+          <Image src="/images/logo.jpg" alt="Sam Creative Graphics" width={48} height={48} className="rounded-2xl object-contain shadow-sm sm:h-[54px] sm:w-[54px]" />
           <div className="leading-tight">
-            <p className="text-sm font-black uppercase tracking-wide text-charcoal">Sam Creative</p>
+            <p className="text-xs font-black uppercase tracking-wide text-charcoal sm:text-sm">Sam Creative</p>
             <p className="text-xs font-bold text-skybrand">Graphics</p>
           </div>
         </Link>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-bold text-charcoal/70 transition hover:text-skybrand">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="group relative text-sm font-bold text-charcoal/70 transition hover:text-charcoal"
+            >
               {link.label}
+              <span className="absolute -bottom-2 left-0 h-0.5 w-0 rounded-full bg-skybrand transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -46,7 +51,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((current) => !current)}
-          className="rounded-full border border-charcoal/10 p-3 text-charcoal lg:hidden"
+          className="rounded-full border border-charcoal/10 bg-white/70 p-3 text-charcoal shadow-sm transition hover:border-skybrand/30 hover:text-skybrand lg:hidden"
           aria-label="Toggle navigation menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -54,7 +59,7 @@ export default function Navbar() {
       </nav>
 
       {open ? (
-        <div className="border-t border-charcoal/10 bg-white px-5 py-4 lg:hidden">
+        <div className="border-t border-white/40 bg-white/82 px-5 py-4 backdrop-blur-xl lg:hidden">
           <div className="grid gap-2">
             {links.map((link) => (
               <Link

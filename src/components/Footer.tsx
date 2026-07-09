@@ -1,14 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 
-const links = ["About", "Services", "Portfolio", "Testimonials", "Contact"];
-const services = ["Brand Identity", "Social Media", "Print & Packaging", "UI/UX Design"];
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" },
+];
+
+const services = [
+  { label: "Brand Identity", href: "#brand-identity" },
+  { label: "Social Media", href: "#social-media-design" },
+  { label: "Print & Packaging", href: "#print-packaging" },
+  { label: "UI/UX Design", href: "#ui-ux-web-design" },
+];
+
+const contactLinks = [
+  { label: "WhatsApp", href: "https://wa.me/c/254743475247", Icon: MessageCircle },
+  { label: "Email", href: "mailto:samkimiri550307@gmail.com", Icon: Mail },
+  { label: "Call", href: "tel:+254743475247", Icon: Phone },
+];
 
 export default function Footer() {
   return (
     <footer className="bg-charcoal px-5 py-14 text-white lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+      <div className="section-shell grid gap-10 px-0 sm:px-0 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr] lg:px-0">
         <div>
           <div className="flex items-center gap-3">
             <Image src="/images/logo.jpg" alt="Sam Creative Graphics" width={56} height={56} className="rounded-2xl object-contain" />
@@ -24,31 +43,44 @@ export default function Footer() {
         <FooterColumn title="Quick Links" items={links} />
         <FooterColumn title="Services" items={services} />
         <div>
-          <p className="font-black">Social</p>
+          <p className="font-black">Connect</p>
           <div className="mt-5 flex gap-3">
-            {[Facebook, Instagram, Linkedin, Twitter].map((Icon, index) => (
-              <Link key={index} href="#" className="rounded-full border border-white/10 p-3 text-white/70 transition hover:border-skybrand hover:text-skybrand">
+            {contactLinks.map(({ label, href, Icon }) => (
+              <Link
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noreferrer" : undefined}
+                aria-label={label}
+                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/70 transition duration-300 hover:-translate-y-0.5 hover:border-skybrand/50 hover:bg-white/10 hover:text-skybrand"
+              >
                 <Icon className="h-4 w-4" />
               </Link>
             ))}
           </div>
+          <Link
+            href="#contact"
+            className="mt-5 inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-extrabold text-white/80 transition duration-300 hover:-translate-y-0.5 hover:border-rainbow/50 hover:bg-rainbow hover:text-charcoal"
+          >
+            Start a project
+          </Link>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-sm font-bold text-white/45">
+      <div className="section-shell mt-12 border-t border-white/10 px-0 pt-6 text-sm font-bold text-white/45 sm:px-0 lg:px-0">
         (c) 2026 Sam Creative Graphics. All Rights Reserved.
       </div>
     </footer>
   );
 }
 
-function FooterColumn({ title, items }: { title: string; items: string[] }) {
+function FooterColumn({ title, items }: { title: string; items: Array<{ label: string; href: string }> }) {
   return (
     <div>
       <p className="font-black">{title}</p>
       <div className="mt-5 grid gap-3">
         {items.map((item) => (
-          <Link key={item} href={`#${item.toLowerCase().split(" ")[0]}`} className="text-sm font-bold text-white/58 transition hover:text-skybrand">
-            {item}
+          <Link key={item.href} href={item.href} className="text-sm font-bold text-white/58 transition duration-300 hover:translate-x-1 hover:text-skybrand">
+            {item.label}
           </Link>
         ))}
       </div>

@@ -17,12 +17,12 @@ export default async function Portfolio() {
   const portfolioItems = await getProjects();
 
   return (
-    <section id="portfolio" className="bg-soft py-24">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+    <section id="portfolio" className="bg-soft py-16 sm:py-24">
+      <div className="section-shell">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-3xl">
             <p className="text-sm font-black uppercase tracking-widest text-coral">Portfolio</p>
-            <h2 className="mt-3 text-4xl font-black tracking-tight text-charcoal md:text-5xl">
+            <h2 className="section-title mt-3">
               Live brand work shaped for real clients, clear markets, and strong first impressions.
             </h2>
           </div>
@@ -42,8 +42,8 @@ export default async function Portfolio() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-4 rounded-[2rem] border border-skybrand/15 bg-white p-5 shadow-sm md:grid-cols-[0.8fr_1.2fr] md:p-6">
-          <div className="rounded-3xl bg-gradient-to-br from-skybrand via-aqua to-rainbow p-5 text-white">
+        <div className="glass-card-light modern-hover mt-10 grid gap-4 p-5 md:grid-cols-[0.8fr_1.2fr] md:p-6">
+          <div className="rounded-2xl bg-gradient-to-br from-skybrand via-aqua to-rainbow p-5 text-white shadow-glow">
             <p className="text-xs font-black uppercase tracking-widest text-white/80">Live Catalog Source</p>
             <h3 className="mt-8 text-3xl font-black leading-tight">Fresh work is published first on WhatsApp.</h3>
           </div>
@@ -61,7 +61,7 @@ export default async function Portfolio() {
           {portfolioItems.map((item, index) => (
             <article
               key={item.title}
-              className={`group overflow-hidden rounded-3xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-premium ${
+              className={`group glass-card-light overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-premium ${
                 index === 1 || index === 4 ? "lg:translate-y-8" : ""
               }`}
             >
