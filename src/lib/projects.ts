@@ -9,6 +9,7 @@ export type ProjectRecord = {
   category: string;
   description: string;
   imageUrl?: string;
+  imagePosition?: string;
   featured?: boolean;
   createdAt: string;
 };
@@ -35,6 +36,8 @@ function fallbackProjects(): ProjectRecord[] {
     title: item.title,
     category: item.category,
     description: item.description,
+    imageUrl: item.imageUrl,
+    imagePosition: item.imagePosition,
     featured: true,
     createdAt: new Date(0).toISOString(),
   }));

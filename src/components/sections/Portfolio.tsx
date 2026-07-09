@@ -43,16 +43,26 @@ export default async function Portfolio() {
         </div>
 
         <div className="glass-card-light modern-hover mt-10 grid gap-4 p-5 md:grid-cols-[0.8fr_1.2fr] md:p-6">
-          <div className="rounded-2xl bg-gradient-to-br from-skybrand via-aqua to-rainbow p-5 text-white shadow-glow">
-            <p className="text-xs font-black uppercase tracking-widest text-white/80">Live Catalog Source</p>
-            <h3 className="mt-8 text-3xl font-black leading-tight">Fresh work is published first on WhatsApp.</h3>
+          <div className="relative min-h-72 overflow-hidden rounded-2xl bg-gradient-to-br from-skybrand via-aqua to-rainbow text-white shadow-glow">
+            <Image
+              src="/images/portfolio/whatsapp-catalog-preview.jpg"
+              alt="Sample event poster design from the Sam Creative Graphics WhatsApp catalog"
+              fill
+              sizes="(min-width: 768px) 38vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-5">
+              <p className="text-xs font-black uppercase tracking-widest text-white/80">WhatsApp Catalog Sample</p>
+              <h3 className="mt-3 text-3xl font-black leading-tight">Real design preview pulled from the public catalog.</h3>
+            </div>
           </div>
           <div className="flex flex-col justify-center">
             <p className="text-lg font-extrabold leading-8 text-charcoal">
-              The website portfolio is now connected to a professional upload backend. Use `/admin/projects` to add the best photos from the WhatsApp catalog into the homepage without editing code.
+              The homepage now displays a real catalog sample across the portfolio cards so viewers can see actual visual work immediately.
             </p>
             <p className="mt-3 text-sm font-bold leading-6 text-charcoal/55">
-              WhatsApp requires login before exposing catalog media, so direct automatic extraction is blocked here. The upload dashboard is the reliable production path.
+              WhatsApp exposes only one public preview image without opening the app. Add more category-specific project photos through `/admin/projects` when you want each card to show a different finished design.
             </p>
           </div>
         </div>
@@ -73,6 +83,7 @@ export default async function Portfolio() {
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
+                    style={{ objectPosition: item.imagePosition || "center" }}
                     unoptimized={item.imageUrl.startsWith("data:")}
                   />
                 ) : (
