@@ -19,7 +19,11 @@ const services = [
 ];
 
 const contactLinks = [
-  { label: "WhatsApp", href: "https://wa.me/c/254743475247", Icon: MessageCircle },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/254743475247?text=Hello%20Sam%20Creative%20Graphics%2C%20I%20would%20like%20to%20request%20a%20quote.",
+    Icon: MessageCircle,
+  },
   { label: "Email", href: "mailto:samkimiri550307@gmail.com", Icon: Mail },
   { label: "Call", href: "tel:+254743475247", Icon: Phone },
 ];

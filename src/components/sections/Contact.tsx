@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CheckCircle2, Loader2, Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
+import { CheckCircle2, Loader2, Mail, MapPin, MessageCircle, Phone, Send, Sparkles } from "lucide-react";
 
 const serviceOptions = [
   "Brand Identity & Logos",
@@ -9,13 +9,18 @@ const serviceOptions = [
   "Print & Packaging",
   "UI/UX & Web Design",
   "Campaign Design",
+  "Other service / custom request",
 ];
+
+const whatsappChatUrl =
+  "https://wa.me/254743475247?text=Hello%20Sam%20Creative%20Graphics%2C%20I%20would%20like%20to%20request%20a%20quote.";
 
 type FormState = {
   name: string;
   email: string;
   phone: string;
   service: string;
+  otherService: string;
   message: string;
   website: string;
 };
@@ -25,6 +30,7 @@ const initialState: FormState = {
   email: "",
   phone: "",
   service: "",
+  otherService: "",
   message: "",
   website: "",
 };
@@ -44,10 +50,15 @@ export default function Contact() {
     setMessage("");
 
     try {
+      const service =
+        form.service === "Other service / custom request" && form.otherService.trim()
+          ? `Other service: ${form.otherService.trim()}`
+          : form.service;
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, service }),
       });
       const data = (await response.json()) as { message?: string };
 
@@ -121,6 +132,15 @@ export default function Contact() {
                 ))}
               </select>
             </div>
+            {form.service === "Other service / custom request" ? (
+              <input
+                required
+                value={form.otherService}
+                onChange={(event) => updateField("otherService", event.target.value)}
+                placeholder="Describe the service you need"
+                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
+              />
+            ) : null}
             <textarea
               required
               rows={5}
@@ -138,10 +158,21 @@ export default function Contact() {
               Submit Request
             </button>
             {message ? (
-              <p className={`flex items-center gap-2 text-sm font-bold ${status === "success" ? "text-lime" : "text-coral"}`}>
-                {status === "success" ? <CheckCircle2 className="h-4 w-4" /> : null}
-                {message}
-              </p>
+              <div className="grid gap-3">
+                <p className={`flex items-center gap-2 text-sm font-bold ${status === "success" ? "text-lime" : "text-coral"}`}>
+                  {status === "success" ? <CheckCircle2 className="h-4 w-4" /> : null}
+                  {message}
+                </p>
+                <a
+                  href={whatsappChatUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-fit items-center gap-2 rounded-full border border-lime/20 bg-lime/10 px-5 py-3 text-sm font-black text-lime transition hover:-translate-y-0.5 hover:bg-lime hover:text-white"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Continue on WhatsApp
+                </a>
+              </div>
             ) : null}
           </form>
         </div>
@@ -152,6 +183,15 @@ export default function Contact() {
             Open for projects
           </p>
           <h3 className="mt-8 text-2xl font-black sm:text-3xl">Branding, design, and digital work from Nairobi to East Africa.</h3>
+          <a
+            href={whatsappChatUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-lime px-5 py-3 text-sm font-black text-white shadow-lg shadow-lime/20 transition hover:-translate-y-0.5 hover:bg-rainbow hover:text-charcoal"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Message 0743 475 247
+          </a>
           <div className="mt-10 grid gap-4">
             <ContactItem Icon={Mail} label="Email" value="samkimiri550307@gmail.com" />
             <ContactItem Icon={Phone} label="Phone" value="0743 475 247 / 0748 201 131" />
