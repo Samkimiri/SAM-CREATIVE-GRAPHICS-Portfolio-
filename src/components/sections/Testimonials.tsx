@@ -19,10 +19,10 @@ export default function Testimonials() {
                   <Star key={index} className="h-5 w-5 fill-current" />
                 ))}
               </div>
-              <p className="leading-7 text-white/78">&quot;{testimonial.quote}&quot;</p>
+              <p className="leading-7 text-white/80">&quot;{testimonial.quote}&quot;</p>
               <div className="mt-8">
                 <p className="font-black">{testimonial.name}</p>
-                <p className="text-sm font-bold text-white/45">{testimonial.role}</p>
+                <p className="text-sm font-bold text-white/50">{testimonial.role}</p>
               </div>
             </article>
           ))}

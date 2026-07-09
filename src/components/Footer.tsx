@@ -40,7 +40,7 @@ export default function Footer() {
               <p className="text-sm font-bold text-rainbow">Where Creativity Meets Strategy</p>
             </div>
           </div>
-          <p className="mt-5 max-w-sm leading-7 text-white/58">
+          <p className="mt-5 max-w-sm leading-7 text-white/60">
             Premium brand design, campaign visuals, print artwork, and digital experiences for ambitious East African businesses.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function Footer() {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noreferrer" : undefined}
                 aria-label={label}
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2.5 text-sm font-bold text-white/78 transition duration-300 hover:-translate-y-0.5 hover:border-skybrand/50 hover:bg-white/10 hover:text-skybrand"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2.5 text-sm font-bold text-white/80 transition duration-300 hover:-translate-y-0.5 hover:border-skybrand/50 hover:bg-white/10 hover:text-skybrand"
               >
                 <Icon className="h-4 w-4" />
                 <span>{label}</span>
@@ -65,13 +65,13 @@ export default function Footer() {
           </div>
           <Link
             href="#request-quote"
-            className="mt-5 inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-extrabold text-white/80 transition duration-300 hover:-translate-y-0.5 hover:border-rainbow/50 hover:bg-rainbow hover:text-charcoal"
+            className="mt-5 inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-extrabold text-white transition duration-300 hover:-translate-y-0.5 hover:border-rainbow/50 hover:bg-rainbow hover:text-charcoal"
           >
             Start a project
           </Link>
         </div>
       </div>
-      <div className="section-shell mt-12 border-t border-white/10 px-0 pt-6 text-sm font-bold text-white/45 sm:px-0 lg:px-0">
+      <div className="section-shell mt-12 border-t border-white/10 px-0 pt-6 text-sm font-bold text-white/50 sm:px-0 lg:px-0">
         (c) 2026 Sam Creative Graphics. All Rights Reserved.
       </div>
     </footer>
@@ -84,7 +84,7 @@ function FooterColumn({ title, items }: { title: string; items: Array<{ label: s
       <p className="font-black">{title}</p>
       <div className="mt-5 grid gap-3">
         {items.map((item) => (
-          <Link key={item.href} href={item.href} className="text-sm font-bold text-white/58 transition duration-300 hover:translate-x-1 hover:text-skybrand">
+          <Link key={item.href} href={item.href} className="text-sm font-bold text-white/60 transition duration-300 hover:translate-x-1 hover:text-skybrand">
             {item.label}
           </Link>
         ))}

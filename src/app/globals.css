@@ -51,15 +51,15 @@ textarea {
   }
 
   .glass-card {
-    @apply border border-white/18 bg-white/12 shadow-sm backdrop-blur-xl;
+    @apply border border-white/20 bg-white/10 shadow-sm backdrop-blur-xl;
   }
 
   .glass-card-light {
-    @apply border border-charcoal/10 bg-white/72 shadow-sm backdrop-blur-xl;
+    @apply border border-charcoal/10 bg-white/75 shadow-sm backdrop-blur-xl;
   }
 
   .modern-hover {
-    @apply transition duration-300 hover:-translate-y-1 hover:border-skybrand/35 hover:shadow-premium;
+    @apply transition duration-300 hover:-translate-y-1 hover:border-skybrand/40 hover:shadow-premium;
   }
 
   .link-hover {

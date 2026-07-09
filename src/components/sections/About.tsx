@@ -26,7 +26,7 @@ export default function About() {
           <h2 className="section-title mt-3">
             A Nairobi design agency where creativity is guided by strategy.
           </h2>
-          <p className="mt-6 text-base leading-7 text-charcoal/68 sm:text-lg sm:leading-8">
+          <p className="mt-6 text-base leading-7 text-charcoal/70 sm:text-lg sm:leading-8">
             Sam Creative Graphics was built for ambitious businesses that need more than attractive visuals. The agency combines creative execution, practical market understanding, and realistic brand strategy to help clients communicate clearly and compete confidently.
           </p>
           <div className="glass-card-light mt-8 border-l-4 border-skybrand p-5 sm:p-6">

@@ -14,10 +14,10 @@ export default function AdminProjectsPage() {
         <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight text-charcoal md:text-6xl">
           Upload portfolio projects without touching code.
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-charcoal/65">
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-charcoal/70">
           Add project title, category, description, and image. Approved uploads appear on the homepage portfolio section for visitors.
         </p>
-        <div className="mt-8 grid gap-3 rounded-3xl border border-skybrand/15 bg-white/80 p-5 text-sm font-bold leading-6 text-charcoal/65 shadow-sm backdrop-blur md:grid-cols-3">
+        <div className="mt-8 grid gap-3 rounded-3xl border border-skybrand/20 bg-white p-5 text-sm font-bold leading-6 text-charcoal/70 shadow-sm backdrop-blur md:grid-cols-3">
           <p>
             Use the owner password from `ADMIN_UPLOAD_PASSWORD` to upload and manage designs.
           </p>

@@ -304,7 +304,7 @@ export default function ProjectUploader() {
             <label className="flex min-h-48 cursor-pointer flex-col items-center justify-center rounded-3xl border border-dashed border-skybrand/40 bg-skybrand/5 p-6 text-center transition hover:border-skybrand hover:bg-skybrand/10">
               <ImagePlus className="h-10 w-10 text-skybrand" />
               <span className="mt-4 text-sm font-black text-charcoal">Upload project photo</span>
-              <span className="mt-2 text-xs font-bold leading-5 text-charcoal/55">JPG, PNG, or WebP below 1.1MB</span>
+              <span className="mt-2 text-xs font-bold leading-5 text-charcoal/60">JPG, PNG, or WebP below 1.1MB</span>
               <input className="hidden" type="file" accept="image/*" onChange={(event) => chooseImage(event.target.files?.[0])} />
             </label>
 
@@ -436,7 +436,7 @@ export default function ProjectUploader() {
               </article>
             ))
           ) : (
-            <div className="rounded-3xl border border-dashed border-charcoal/15 bg-white p-8 text-center text-sm font-bold leading-6 text-charcoal/55 md:col-span-2">
+            <div className="rounded-3xl border border-dashed border-charcoal/15 bg-white p-8 text-center text-sm font-bold leading-6 text-charcoal/60 md:col-span-2">
               Enter your owner password and click “Load Uploaded Designs” to see projects you have added. New uploads appear here immediately.
             </div>
           )}

@@ -37,7 +37,7 @@ export default function FAQ() {
           <h2 className="section-title mt-3">
             Clear answers before we start building your brand.
           </h2>
-          <p className="mt-5 text-lg leading-8 text-charcoal/68">
+          <p className="mt-5 text-lg leading-8 text-charcoal/70">
             A few practical details about our process, deliverables, and how we turn creative ideas into useful brand assets.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function FAQ() {
                 </div>
                 <div>
                   <h3 className="text-xl font-black text-charcoal">{item.question}</h3>
-                  <p className="mt-3 leading-7 text-charcoal/66">{item.answer}</p>
+                  <p className="mt-3 leading-7 text-charcoal/70">{item.answer}</p>
                 </div>
               </div>
             </article>

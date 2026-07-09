@@ -85,9 +85,9 @@ export default async function Portfolio() {
               sizes="(min-width: 768px) 38vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-5">
-              <p className="text-xs font-black uppercase tracking-widest text-white/80">WhatsApp Catalog Sample</p>
+              <p className="text-xs font-black uppercase tracking-widest text-white">WhatsApp Catalog Sample</p>
               <h3 className="mt-3 text-3xl font-black leading-tight">Real design preview pulled from the public catalog.</h3>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default async function Portfolio() {
             <p className="text-lg font-extrabold leading-8 text-charcoal">
               The homepage now displays a real catalog sample across the portfolio cards so viewers can see actual visual work immediately.
             </p>
-            <p className="mt-3 text-sm font-bold leading-6 text-charcoal/55">
+            <p className="mt-3 text-sm font-bold leading-6 text-charcoal/60">
               WhatsApp exposes only one public preview image without opening the app. Add more category-specific project photos through `/admin/projects` when you want each card to show a different finished design.
             </p>
           </div>
@@ -138,7 +138,7 @@ export default async function Portfolio() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-black text-charcoal">{item.title}</h3>
-                <p className="mt-3 leading-7 text-charcoal/65">{item.description}</p>
+                <p className="mt-3 leading-7 text-charcoal/70">{item.description}</p>
               </div>
             </article>
           ))}

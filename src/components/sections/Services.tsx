@@ -22,7 +22,7 @@ export default function Services() {
                 <Icon className="h-7 w-7 transition duration-300 group-hover:rotate-3" />
               </div>
               <h3 className="text-2xl font-black text-charcoal">{title}</h3>
-              <p className="mt-4 max-w-xl leading-7 text-charcoal/65">{description}</p>
+              <p className="mt-4 max-w-xl leading-7 text-charcoal/70">{description}</p>
             </article>
           ))}
         </div>

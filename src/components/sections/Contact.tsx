@@ -101,7 +101,7 @@ export default function Contact() {
                 value={form.name}
                 onChange={(event) => updateField("name", event.target.value)}
                 placeholder="Name"
-                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
+                className="rounded-2xl border border-charcoal/10 bg-white/95 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               />
               <input
                 required
@@ -109,7 +109,7 @@ export default function Contact() {
                 value={form.email}
                 onChange={(event) => updateField("email", event.target.value)}
                 placeholder="Email"
-                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
+                className="rounded-2xl border border-charcoal/10 bg-white/95 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               />
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -118,13 +118,13 @@ export default function Contact() {
                 value={form.phone}
                 onChange={(event) => updateField("phone", event.target.value)}
                 placeholder="Phone"
-                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
+                className="rounded-2xl border border-charcoal/10 bg-white/95 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               />
               <select
                 required
                 value={form.service}
                 onChange={(event) => updateField("service", event.target.value)}
-                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
+                className="rounded-2xl border border-charcoal/10 bg-white/95 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               >
                 <option value="">Service Needed</option>
                 {serviceOptions.map((service) => (
@@ -138,7 +138,7 @@ export default function Contact() {
                 value={form.otherService}
                 onChange={(event) => updateField("otherService", event.target.value)}
                 placeholder="Describe the service you need"
-                className="rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
+                className="rounded-2xl border border-charcoal/10 bg-white/95 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
               />
             ) : null}
             <textarea
@@ -147,7 +147,7 @@ export default function Contact() {
               value={form.message}
               onChange={(event) => updateField("message", event.target.value)}
               placeholder="Tell us about your project"
-              className="resize-none rounded-2xl border border-charcoal/10 bg-white/86 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
+              className="resize-none rounded-2xl border border-charcoal/10 bg-white/95 px-4 py-4 font-bold outline-none transition focus:border-skybrand focus:shadow-glow"
             />
             <button
               type="submit"
@@ -206,10 +206,10 @@ export default function Contact() {
 
 function ContactItem({ Icon, label, value }: { Icon: typeof Mail; label: string; value: string }) {
   return (
-    <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/8 p-4 transition duration-300 hover:border-rainbow/35 hover:bg-white/12">
+    <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition duration-300 hover:border-rainbow/40 hover:bg-white/10">
       <Icon className="mt-1 h-5 w-5 shrink-0 text-rainbow" />
       <div>
-        <p className="text-xs font-black uppercase tracking-widest text-white/45">{label}</p>
+        <p className="text-xs font-black uppercase tracking-widest text-white/50">{label}</p>
         <p className="mt-1 font-bold text-white">{value}</p>
       </div>
     </div>
