@@ -26,6 +26,7 @@ export async function sendContactNotification(payload: ContactPayload) {
       `Email: ${payload.email}`,
       `Phone: ${payload.phone}`,
       `Service: ${payload.service}`,
+      `Special service details: ${payload.customService || "Not provided"}`,
       `Estimated budget: ${payload.budget}`,
       `Desired completion date: ${payload.completionDate || "Not provided"}`,
       `Heard about us: ${payload.heardAbout || "Not provided"}`,

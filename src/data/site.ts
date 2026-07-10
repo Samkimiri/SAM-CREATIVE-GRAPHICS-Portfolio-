@@ -56,6 +56,13 @@ export const businessQuotes = [
   "Consistency is not repetition. It is the discipline that makes every customer touchpoint feel intentional.",
   "The strongest brands are built before the artwork begins: in the message, the offer, and the market position.",
   "Good creative work should be attractive enough to stop people and strategic enough to move them.",
+  "A business becomes easier to sell when its visuals, words, and customer experience are all telling the same story.",
+  "Premium design is not noise. It is clarity, confidence, and restraint working together.",
+  "A strong brand helps customers feel they are making the right decision before they speak to you.",
+  "Every design touchpoint should answer one question clearly: why should the customer trust this business?",
+  "The best creative direction makes the business easier to remember, easier to recommend, and easier to choose.",
+  "A brand grows stronger when strategy guides the visuals and discipline keeps the experience consistent.",
+  "Good communication turns attention into understanding. Great branding turns understanding into action.",
 ];
 
 export type Service = {

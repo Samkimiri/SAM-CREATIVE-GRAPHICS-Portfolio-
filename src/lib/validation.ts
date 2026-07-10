@@ -4,6 +4,7 @@ export type ContactPayload = {
   email: string;
   phone: string;
   service: string;
+  customService: string;
   budget: string;
   completionDate: string;
   heardAbout: string;
@@ -26,6 +27,7 @@ export function validateContactPayload(input: Record<string, unknown>) {
     email: cleanText(input.email, 120).toLowerCase(),
     phone: cleanText(input.phone, 40),
     service: cleanText(input.service, 90),
+    customService: cleanText(input.customService, 160),
     budget: cleanText(input.budget, 80),
     completionDate: cleanText(input.completionDate, 40),
     heardAbout: cleanText(input.heardAbout, 80),
@@ -40,6 +42,9 @@ export function validateContactPayload(input: Record<string, unknown>) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) errors.email = "Enter a valid email address.";
   if (!payload.phone) errors.phone = "Phone number is required.";
   if (!payload.service) errors.service = "Choose a service.";
+  if (payload.service === "Special / custom service" && payload.customService.length < 4) {
+    errors.customService = "Briefly describe the special service you need.";
+  }
   if (!payload.budget) errors.budget = "Choose an estimated budget.";
   if (payload.message.length < 20) errors.message = "Project description should be at least 20 characters.";
   if (!payload.consent) errors.consent = "Consent is required before submitting.";

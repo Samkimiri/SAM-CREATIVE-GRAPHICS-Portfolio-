@@ -8,6 +8,7 @@ import { contactActions, services, site } from "@/data/site";
 
 const budgetOptions = ["Below KSh 10,000", "KSh 10,000 - 30,000", "KSh 30,000 - 75,000", "KSh 75,000+", "Not sure yet"];
 const sourceOptions = ["Google search", "Referral", "WhatsApp", "Social media", "Previous client", "Other"];
+const customServiceLabel = "Special / custom service";
 
 type FormState = {
   name: string;
@@ -15,6 +16,7 @@ type FormState = {
   email: string;
   phone: string;
   service: string;
+  customService: string;
   budget: string;
   completionDate: string;
   heardAbout: string;
@@ -29,6 +31,7 @@ const initialState: FormState = {
   email: "",
   phone: "",
   service: "",
+  customService: "",
   budget: "",
   completionDate: "",
   heardAbout: "",
@@ -125,11 +128,22 @@ export default function Contact() {
 
             <div className="grid gap-5 md:grid-cols-2">
               <Field label="Service needed" error={errors.service}>
-                <select id="service" name="service" required value={form.service} onChange={(event) => updateField("service", event.target.value)} className="form-field">
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  value={form.service}
+                  onChange={(event) => {
+                    updateField("service", event.target.value);
+                    if (event.target.value !== customServiceLabel) updateField("customService", "");
+                  }}
+                  className="form-field"
+                >
                   <option value="">Select a service</option>
                   {services.map((service) => (
                     <option key={service.title}>{service.title}</option>
                   ))}
+                  <option>{customServiceLabel}</option>
                 </select>
               </Field>
               <Field label="Estimated budget" error={errors.budget}>
@@ -141,6 +155,19 @@ export default function Contact() {
                 </select>
               </Field>
             </div>
+
+            {form.service === customServiceLabel ? (
+              <Field label="Describe the special service" error={errors.customService}>
+                <input
+                  id="customService"
+                  name="customService"
+                  required
+                  value={form.customService}
+                  onChange={(event) => updateField("customService", event.target.value)}
+                  className="form-field"
+                />
+              </Field>
+            ) : null}
 
             <div className="grid gap-5 md:grid-cols-2">
               <Field label="Desired completion date" error={errors.completionDate}>

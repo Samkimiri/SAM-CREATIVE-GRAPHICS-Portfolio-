@@ -6,10 +6,20 @@ import { businessQuotes } from "@/data/site";
 
 const rotationMs = 60_000;
 
+function getWeeklyQuoteIndex() {
+  const now = new Date();
+  const firstDay = new Date(now.getFullYear(), 0, 1);
+  const dayOffset = Math.floor((now.getTime() - firstDay.getTime()) / 86_400_000);
+  const weekNumber = Math.floor((dayOffset + firstDay.getDay()) / 7);
+  return weekNumber % businessQuotes.length;
+}
+
 export default function BusinessQuotes() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    setActiveIndex(getWeeklyQuoteIndex());
+
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % businessQuotes.length);
     }, rotationMs);
@@ -26,8 +36,8 @@ export default function BusinessQuotes() {
           </div>
 
           <div aria-live="polite">
-            <p className="text-xs font-black uppercase tracking-widest text-coral">Business Thought</p>
-            <p className="mt-2 text-xl font-black leading-snug text-charcoal sm:text-2xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-skybrand">Weekly Business Thought</p>
+            <p className="mt-2 text-xl font-light leading-snug text-charcoal sm:text-2xl">
               {businessQuotes[activeIndex]}
             </p>
           </div>
