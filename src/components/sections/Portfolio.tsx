@@ -9,12 +9,12 @@ import {
   Megaphone,
   Music2,
   Palette,
-  Sparkles,
   Utensils,
   type LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
+import WhatsAppSamplePreview from "@/components/WhatsAppSamplePreview";
 
 const whatsappCatalogUrl = "https://wa.me/c/254743475247";
 
@@ -103,34 +103,22 @@ function PortfolioImage({
   );
 }
 
-function PromoPoster({ title, index }: { title: string; index: number }) {
+function PromoPoster({ title, category, index }: { title: string; category: string; index: number }) {
   const theme = posterThemes[index % posterThemes.length];
   const Icon = theme.Icon;
 
   return (
-    <div className={`absolute inset-0 overflow-hidden bg-gradient-to-br ${theme.background} p-5 text-white`}>
-      <div className="absolute -right-12 -top-12 h-44 w-44 rounded-full border-[18px] border-white/25" />
-      <div className="absolute -bottom-16 left-8 h-48 w-48 rotate-12 rounded-[2rem] border-[18px] border-white/15" />
-      <div className={`absolute right-8 top-20 h-20 w-20 rounded-full ${theme.accent} opacity-95 shadow-glow`} />
-      <div className={`absolute bottom-8 right-16 h-24 w-8 -rotate-12 rounded-full ${theme.secondary} opacity-90`} />
-      <div className="relative flex h-full flex-col justify-between">
+    <div className={`absolute inset-0 bg-gradient-to-br ${theme.background} p-5 text-white`}>
+      <div className="flex h-full flex-col justify-between rounded-md border border-white/25 bg-white/10 p-5 backdrop-blur-[1px]">
         <div className="flex items-start justify-between gap-4">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-2 text-[0.7rem] font-black uppercase tracking-widest text-charcoal shadow-sm">
             <Icon className="h-4 w-4" />
             {theme.badge}
           </span>
-          <div className="rounded-2xl bg-white/15 p-3 backdrop-blur">
-            <Sparkles className="h-6 w-6" />
-          </div>
         </div>
 
         <div>
-          <div className="mb-5 grid grid-cols-3 gap-2">
-            <span className="h-2 rounded-full bg-white/90" />
-            <span className={`h-2 rounded-full ${theme.accent}`} />
-            <span className={`h-2 rounded-full ${theme.secondary}`} />
-          </div>
-          <p className="text-xs font-black uppercase tracking-[0.35em] text-white/75">Promotional</p>
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-white/75">{category}</p>
           <p className="mt-2 max-w-[13rem] text-3xl font-black leading-none tracking-tight">{title}</p>
         </div>
       </div>
@@ -140,6 +128,13 @@ function PromoPoster({ title, index }: { title: string; index: number }) {
 
 export default async function Portfolio() {
   const portfolioItems = await getProjects();
+  const whatsappSamples = portfolioItems.slice(0, 3).map((item) => ({
+    title: item.title,
+    category: item.category,
+    description: item.description,
+    imageUrl: item.imageUrl || "/images/portfolio/whatsapp-catalog-preview.jpg",
+    imagePosition: item.imagePosition || "center",
+  }));
 
   return (
     <section id="portfolio" className="bg-soft py-16 sm:py-24">
@@ -167,30 +162,7 @@ export default async function Portfolio() {
           </div>
         </div>
 
-        <div className="glass-card-light modern-hover mt-10 grid gap-4 p-5 md:grid-cols-[0.8fr_1.2fr] md:p-6">
-          <div className="relative min-h-72 overflow-hidden rounded-2xl bg-gradient-to-br from-skybrand via-aqua to-rainbow text-white shadow-glow">
-            <Image
-              src="/images/portfolio/whatsapp-catalog-preview.jpg"
-              alt="Sample event poster design from the Sam Creative Graphics WhatsApp catalog"
-              fill
-              sizes="(min-width: 768px) 38vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/10 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-5">
-              <p className="text-xs font-black uppercase tracking-widest text-white">WhatsApp Catalog Sample</p>
-              <h3 className="mt-3 text-3xl font-black leading-tight">Real design preview pulled from the public catalog.</h3>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center">
-            <p className="text-lg font-extrabold leading-8 text-charcoal">
-              The portfolio highlights different promotional directions, from brand launches and retail campaigns to events, hospitality, property, and entertainment artwork.
-            </p>
-            <p className="mt-3 text-sm font-bold leading-6 text-charcoal/60">
-              Each sample uses a distinct poster style and icon so visitors can quickly understand the range of creative work before opening the full WhatsApp catalog.
-            </p>
-          </div>
-        </div>
+        <WhatsAppSamplePreview samples={whatsappSamples} catalogUrl={whatsappCatalogUrl} />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {portfolioItems.map((item, index) => {
@@ -211,7 +183,7 @@ export default async function Portfolio() {
                       objectPosition={item.imagePosition || "center"}
                     />
                   ) : (
-                    <PromoPoster title={item.title} index={index} />
+                    <PromoPoster title={item.title} category={item.category} index={index} />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent opacity-70" />
                   <div className="relative flex h-full flex-col justify-between">
@@ -220,13 +192,11 @@ export default async function Portfolio() {
                       {item.category}
                     </span>
                     <a
-                      href={whatsappCatalogUrl}
-                      target="_blank"
-                      rel="noreferrer"
+                      href="#whatsapp-samples"
                       className="flex w-fit items-center gap-2 rounded-full bg-charcoal px-4 py-2 text-sm font-extrabold text-white opacity-0 transition group-hover:opacity-100"
-                      aria-label={`View ${item.title} in the WhatsApp catalog`}
+                      aria-label={`Preview WhatsApp samples before viewing ${item.title} in the catalog`}
                     >
-                      View Project
+                      Preview First
                       <ArrowUpRight className="h-4 w-4" />
                     </a>
                   </div>
