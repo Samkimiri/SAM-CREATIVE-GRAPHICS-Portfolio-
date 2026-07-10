@@ -1,4 +1,13 @@
-export const portfolioItems = [
+type PortfolioItem = {
+  title: string;
+  category: string;
+  description: string;
+  colors: string;
+  imageUrl?: string;
+  imagePosition?: string;
+};
+
+export const portfolioItems: PortfolioItem[] = [
   {
     title: "Brand Launch Identity",
     category: "Brand Identity",
