@@ -50,6 +50,14 @@ export const stats = [
   { value: "Nairobi", label: "Kenya", Icon: MapPin },
 ];
 
+export const businessQuotes = [
+  "A credible brand does not just look good. It makes people understand, trust, and choose you faster.",
+  "Design becomes powerful when it connects business goals, audience psychology, and clear visual communication.",
+  "Consistency is not repetition. It is the discipline that makes every customer touchpoint feel intentional.",
+  "The strongest brands are built before the artwork begins: in the message, the offer, and the market position.",
+  "Good creative work should be attractive enough to stop people and strategic enough to move them.",
+];
+
 export type Service = {
   title: string;
   slug: string;

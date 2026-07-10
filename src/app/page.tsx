@@ -1,4 +1,5 @@
 import About from "@/components/sections/About";
+import BusinessQuotes from "@/components/sections/BusinessQuotes";
 import Contact from "@/components/sections/Contact";
 import CTASection from "@/components/sections/CTASection";
 import FAQ from "@/components/sections/FAQ";
@@ -54,6 +55,7 @@ export default function Home() {
     <main id="main-content">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero />
+      <BusinessQuotes />
       <Portfolio />
       <Services />
       <About />
