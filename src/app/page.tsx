@@ -6,6 +6,7 @@ import FAQ from "@/components/sections/FAQ";
 import Hero from "@/components/sections/Hero";
 import Portfolio from "@/components/sections/Portfolio";
 import Process from "@/components/sections/Process";
+import ProjectReadiness from "@/components/sections/ProjectReadiness";
 import Services from "@/components/sections/Services";
 import Testimonials from "@/components/sections/Testimonials";
 import { faqs } from "@/data/faqs";
@@ -62,6 +63,7 @@ export default function Home() {
       <Process />
       <Testimonials />
       <FAQ />
+      <ProjectReadiness />
       <CTASection />
       <Contact />
     </main>

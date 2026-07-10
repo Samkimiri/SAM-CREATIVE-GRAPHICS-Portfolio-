@@ -1,41 +1,90 @@
+"use client";
+
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 import { services } from "@/data/services";
 
 export default function Services() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeService = services[activeIndex];
+  const ActiveIcon = activeService.Icon;
+
   return (
     <section id="services" className="bg-white py-16 sm:py-24">
       <div className="section-shell">
-        <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-widest text-coral">Services</p>
-          <h2 className="section-title mt-3">
-            Creative services built for visibility, trust, and business growth.
-          </h2>
+        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-widest text-coral">Services</p>
+            <h2 className="section-title mt-3">
+              Choose the design support your business needs now.
+            </h2>
+          </div>
+          <p className="max-w-3xl text-lg font-light leading-8 text-charcoal/70">
+            Explore each service area, review typical deliverables, then start a focused request with the right context.
+          </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {services.map(({ title, slug, description, deliverables, accent, Icon }) => (
-            <article
-              key={title}
-              id={slug}
-              className="classic-hover group rounded-lg border border-border bg-white p-6 shadow-sm sm:p-7"
-            >
-              <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-lg text-white shadow-lg transition duration-300 group-hover:scale-105" style={{ backgroundColor: accent }}>
-                <Icon className="h-7 w-7 transition duration-300 group-hover:rotate-3" />
+        <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-3" role="tablist" aria-label="Service categories">
+            {services.map(({ title, Icon }, index) => {
+              const isActive = activeIndex === index;
+
+              return (
+                <button
+                  key={title}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls="active-service-panel"
+                  onClick={() => setActiveIndex(index)}
+                  className={`flex items-center justify-between gap-4 rounded-lg border p-4 text-left transition ${
+                    isActive
+                      ? "border-skybrand bg-skybrand text-white shadow-glow"
+                      : "border-border bg-soft text-charcoal hover:border-skybrand/40 hover:bg-white"
+                  }`}
+                >
+                  <span className="flex items-center gap-3">
+                    <span className={`inline-flex h-11 w-11 items-center justify-center rounded-lg ${isActive ? "bg-white/15" : "bg-white text-skybrand"}`}>
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="font-black">{title}</span>
+                  </span>
+                  <ArrowRight className={`h-4 w-4 transition ${isActive ? "translate-x-1" : ""}`} />
+                </button>
+              );
+            })}
+          </div>
+
+          <article id="active-service-panel" role="tabpanel" className="classic-hover rounded-lg border border-border bg-white p-6 shadow-sm sm:p-8">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-lg text-white shadow-lg" style={{ backgroundColor: activeService.accent }}>
+                  <ActiveIcon className="h-8 w-8" />
+                </div>
+                <h3 className="text-3xl font-black leading-tight text-charcoal">{activeService.title}</h3>
+                <p className="mt-4 max-w-2xl text-lg font-light leading-8 text-charcoal/70">{activeService.description}</p>
               </div>
-              <h3 className="text-2xl font-black text-charcoal">{title}</h3>
-              <p className="mt-4 max-w-xl leading-7 text-charcoal/70">{description}</p>
-              <ul className="mt-6 grid gap-2">
-                {deliverables.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm font-bold text-charcoal/70">
-                    <span className="h-1.5 w-1.5 rounded-full bg-coral" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a href="#request-quote" className="mt-7 inline-flex text-sm font-black text-coral underline-offset-4 hover:underline">
-                Request This Service
+              <a href="#request-quote" className="secondary-cta shrink-0">
+                Request Service
               </a>
-            </article>
-          ))}
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {activeService.deliverables.map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-lg border border-border bg-soft p-4">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
+                  <span className="text-sm font-bold text-charcoal/75">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-lg border border-skybrand/15 bg-skybrand/5 p-5">
+              <p className="text-sm font-black uppercase tracking-widest text-skybrand">Best next step</p>
+              <p className="mt-2 font-light leading-7 text-charcoal/70">
+                Send your goal, deadline, audience, and any reference styles. We will recommend the right scope before the work begins.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
