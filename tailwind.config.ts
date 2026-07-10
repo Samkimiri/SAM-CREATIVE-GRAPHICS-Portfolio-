@@ -5,11 +5,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        skybrand: "#5B2EFF",
-        cobalt: "#5B2EFF",
+        skybrand: "#2F9CEB",
+        cobalt: "#0B5BD3",
         coral: "#F24E1E",
         rainbow: "#FFB624",
-        aqua: "#00B37E",
+        aqua: "#14C7E8",
         lime: "#00B37E",
         charcoal: "#111318",
         ink: "#34373F",

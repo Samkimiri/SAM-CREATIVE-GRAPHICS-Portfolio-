@@ -28,7 +28,7 @@ export default function WhatsAppSamplePreview({
         <div>
           <p className="text-sm font-black uppercase tracking-widest text-coral">WhatsApp Samples</p>
           <h3 className="mt-2 max-w-2xl text-2xl font-black leading-tight text-charcoal sm:text-3xl">
-            Preview the catalog style before opening WhatsApp.
+            Preview different design styles before opening WhatsApp.
           </h3>
         </div>
         <a

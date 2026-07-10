@@ -14,11 +14,13 @@
 - Accessible mobile menu with Escape-key close, scroll lock and active section highlighting.
 - Richer enquiry form with budget, timeline, organisation, source, privacy consent and honeypot.
 - Vercel Analytics and Speed Insights dependencies.
+- Five-image generated hero carousel for design studio, workshop, print, UI/UX and campaign design scenes.
 
 ## Content changed
 - Updated positioning to focus on Nairobi brand design, strategic creative work and East African businesses.
 - Removed public copy that sounded like admin or implementation guidance.
 - Kept testimonials generic where verified client identities are not available.
+- Removed repeated WhatsApp preview cards by showing the poster once and using other design visuals for the remaining previews.
 
 ## Accessibility improvements
 - Added skip link, visible focus styles, semantic sections, accessible accordion, form labels, status announcements and keyboard-accessible navigation.

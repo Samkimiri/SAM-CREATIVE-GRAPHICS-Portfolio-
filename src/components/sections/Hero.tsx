@@ -2,10 +2,58 @@ import Image from "next/image";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { stats } from "@/data/site";
 
+const heroSlides = [
+  {
+    src: "/images/hero/designer-desktop.png",
+    alt: "Well-groomed designer working on brand design at a modern desktop workstation",
+    position: "center",
+  },
+  {
+    src: "/images/hero/design-workshop.png",
+    alt: "Creative design workshop reviewing posters, brand palettes and packaging ideas",
+    position: "center",
+  },
+  {
+    src: "/images/hero/print-packaging.png",
+    alt: "Premium print and packaging design materials arranged on a studio table",
+    position: "center",
+  },
+  {
+    src: "/images/hero/website-uiux.png",
+    alt: "Designer reviewing website and UI UX layouts on a modern desktop monitor",
+    position: "center",
+  },
+  {
+    src: "/images/hero/campaign-design.png",
+    alt: "Campaign poster and social media design work in a modern creative studio",
+    position: "center",
+  },
+];
+
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-charcoal pt-28 text-white sm:pt-32">
-      <div className="section-shell grid min-h-[calc(100vh-7rem)] items-center gap-10 pb-14 pt-8 lg:grid-cols-[1fr_0.9fr]">
+      <div className="absolute inset-0 -z-20">
+        {heroSlides.map((image, index) => (
+          <Image
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            className="hero-slide absolute inset-0 h-full w-full object-cover"
+            style={{
+              animationDelay: `${index * 5}s`,
+              objectPosition: image.position,
+            }}
+          />
+        ))}
+      </div>
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(17,19,24,0.94)_0%,rgba(17,19,24,0.82)_42%,rgba(17,19,24,0.48)_72%,rgba(17,19,24,0.35)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-charcoal via-charcoal/75 to-transparent" />
+
+      <div className="section-shell flex min-h-[calc(100vh-7rem)] items-center pb-14 pt-8">
         <div className="max-w-4xl">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-widest text-rainbow">
             Nairobi Brand Design Agency
@@ -31,38 +79,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto grid w-full max-w-xl grid-cols-5 gap-3 lg:max-w-none">
-          <div className="col-span-3 overflow-hidden rounded-lg bg-white/8 shadow-premium ring-1 ring-white/10">
-            <Image
-              src="/images/portfolio/whatsapp-catalog-preview.jpg"
-              alt="Sam Creative Graphics campaign poster preview"
-              width={640}
-              height={800}
-              priority
-              className="aspect-[4/5] h-full w-full object-cover"
-            />
-          </div>
-          <div className="col-span-2 grid gap-3">
-            <div className="overflow-hidden rounded-lg bg-white/8 ring-1 ring-white/10">
-              <Image
-                src="/images/hero-print-production.jpg"
-                alt="Printed brand materials and production proofs"
-                width={420}
-                height={300}
-                className="aspect-[4/3] h-full w-full object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg bg-white/8 ring-1 ring-white/10">
-              <Image
-                src="/images/hero-brand-launch.jpg"
-                alt="Brand launch materials arranged for presentation"
-                width={420}
-                height={480}
-                className="aspect-[4/5] h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
       </div>
 
       <div className="border-y border-white/10 bg-white/[0.04]">

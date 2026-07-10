@@ -129,13 +129,29 @@ function PromoPoster({ title, category, index }: { title: string; category: stri
 
 export default async function Portfolio() {
   const portfolioItems = await getProjects();
-  const whatsappSamples = portfolioItems.slice(0, 3).map((item) => ({
-    title: item.title,
-    category: item.category,
-    description: item.description,
-    imageUrl: item.imageUrl || "/images/portfolio/whatsapp-catalog-preview.jpg",
-    imagePosition: item.imagePosition || "center",
-  }));
+  const whatsappSamples = [
+    {
+      title: "Opening Ceremony Poster",
+      category: "Campaign Design",
+      description: "A public event poster sample with speaker focus, hierarchy and promotional structure.",
+      imageUrl: "/images/portfolio/whatsapp-catalog-preview.jpg",
+      imagePosition: "center",
+    },
+    {
+      title: "Design Workshop Direction",
+      category: "Brand Strategy",
+      description: "A creative workshop preview showing how visual systems, palettes and layouts are shaped.",
+      imageUrl: "/images/hero/design-workshop.png",
+      imagePosition: "center",
+    },
+    {
+      title: "Print and Packaging Preview",
+      category: "Print and Editorial",
+      description: "A production-focused preview for brochures, packaging, labels and print-ready artwork.",
+      imageUrl: "/images/hero/print-packaging.png",
+      imagePosition: "center",
+    },
+  ];
 
   return (
     <section id="portfolio" className="bg-soft py-16 sm:py-24">
