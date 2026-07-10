@@ -9,7 +9,7 @@ export default function ErrorPage({ reset }: { reset: () => void }) {
           We could not load this page properly.
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-8 text-charcoal/70">
-          Please try again. If the issue continues, contact Sam Creative Graphics directly.
+          Please try again. If the issue continues, contact SAM CREATIVE GRAPHICS BRAND AGENCY directly.
         </p>
         <button type="button" onClick={reset} className="primary-cta mt-8 w-fit">
           Try Again

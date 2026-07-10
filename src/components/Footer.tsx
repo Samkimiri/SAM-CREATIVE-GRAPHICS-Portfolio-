@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="section-shell grid gap-10 px-0 sm:px-0 lg:grid-cols-[1.2fr_0.8fr_0.9fr_1fr] lg:px-0">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/images/logo.jpg" alt="Sam Creative Graphics" width={56} height={56} className="rounded-lg bg-white object-contain p-1" />
+            <Image src="/images/logo.jpg" alt="SAM CREATIVE GRAPHICS BRAND AGENCY" width={56} height={56} className="rounded-lg bg-white object-contain p-1" />
             <div>
               <p className="font-black uppercase tracking-wide">{site.name}</p>
               <p className="text-sm font-bold text-rainbow">{site.tagline}</p>

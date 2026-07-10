@@ -25,34 +25,34 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Branding & Graphic Design Agency Nairobi | Sam Creative Graphics",
-    template: "%s | Sam Creative Graphics",
+    default: "Branding & Graphic Design Agency Nairobi | SAM CREATIVE GRAPHICS BRAND AGENCY",
+    template: "%s | SAM CREATIVE GRAPHICS BRAND AGENCY",
   },
   description:
-    "Sam Creative Graphics is a Nairobi design agency creating brand identities, campaign graphics, packaging, print materials and websites for businesses across Kenya and East Africa.",
+    "SAM CREATIVE GRAPHICS BRAND AGENCY is a Nairobi design agency creating brand identities, campaign graphics, packaging, print materials and websites for businesses across Kenya and East Africa.",
   alternates: {
     canonical: siteUrl,
   },
   keywords: [
-    "Sam Creative Graphics",
+    "SAM CREATIVE GRAPHICS BRAND AGENCY",
     "Brand design Nairobi",
     "Logo design Kenya",
     "Graphic design agency Kenya",
     "Social media design Nairobi",
   ],
   openGraph: {
-    title: "Sam Creative Graphics",
+    title: "SAM CREATIVE GRAPHICS BRAND AGENCY",
     description:
       "Nairobi brand design agency creating brand identities, campaign graphics, packaging, print materials and websites.",
     url: siteUrl,
-    siteName: "Sam Creative Graphics",
-    images: [{ url: "/images/logo.jpg", width: 1080, height: 1080, alt: "Sam Creative Graphics logo" }],
+    siteName: "SAM CREATIVE GRAPHICS BRAND AGENCY",
+    images: [{ url: "/images/logo.jpg", width: 1080, height: 1080, alt: "SAM CREATIVE GRAPHICS BRAND AGENCY logo" }],
     locale: "en_KE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Branding & Graphic Design Agency Nairobi | Sam Creative Graphics",
+    title: "Branding & Graphic Design Agency Nairobi | SAM CREATIVE GRAPHICS BRAND AGENCY",
     description: "Premium brand design agency in Nairobi, Kenya.",
     images: ["/images/logo.jpg"],
   },

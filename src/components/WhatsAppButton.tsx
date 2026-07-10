@@ -10,7 +10,7 @@ export default function WhatsAppButton() {
       href={site.whatsappUrl}
       target="_blank"
       rel="noreferrer"
-      aria-label="Message Sam Creative Graphics on WhatsApp"
+      aria-label="Message SAM CREATIVE GRAPHICS BRAND AGENCY on WhatsApp"
       onClick={() => track("whatsapp_click", { location: "floating_button" })}
       className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-lime text-white shadow-premium transition hover:-translate-y-1 hover:bg-charcoal focus-visible:outline-rainbow sm:bottom-6 sm:right-6"
     >

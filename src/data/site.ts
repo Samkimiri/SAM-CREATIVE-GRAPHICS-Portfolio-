@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const site = {
-  name: "Sam Creative Graphics",
+  name: "SAM CREATIVE GRAPHICS BRAND AGENCY",
   tagline: "Where Creativity Meets Strategy",
   location: "Nairobi, Kenya",
   email: "samkimiri550307@gmail.com",
@@ -28,7 +28,7 @@ export const site = {
   phoneHref: "tel:+254743475247",
   altPhoneDisplay: "0748 201 131",
   whatsappUrl:
-    "https://wa.me/254743475247?text=Hello%20Sam%20Creative%20Graphics%2C%20I%20would%20like%20to%20discuss%20a%20design%20project.",
+    "https://wa.me/254743475247?text=Hello%20SAM%20CREATIVE%20GRAPHICS%20BRAND%20AGENCY%2C%20I%20would%20like%20to%20discuss%20a%20design%20project.",
   catalogUrl: "https://wa.me/c/254743475247",
   url: "https://sam-creative-graphics.vercel.app",
 };
@@ -73,7 +73,7 @@ export const services: Service[] = [
     slug: "campaign-social-media-design",
     description: "Posters, event creatives, campaign graphics and consistent digital content systems.",
     deliverables: ["Posters", "Campaign kits", "Social templates", "Event creatives"],
-    accent: "#5B2EFF",
+    accent: "#0B5BD3",
     Icon: Megaphone,
   },
   {

@@ -19,7 +19,7 @@ body {
 }
 
 ::selection {
-  background: #f24e1e;
+  background: #2f9ceb;
   color: white;
 }
 
@@ -81,19 +81,19 @@ textarea {
   }
 
   .skip-link {
-    @apply fixed left-4 top-3 z-[100] -translate-y-20 rounded-full bg-coral px-5 py-3 text-sm font-black text-white shadow-premium transition focus:translate-y-0;
+    @apply fixed left-4 top-3 z-[100] -translate-y-20 rounded-full bg-skybrand px-5 py-3 text-sm font-black text-white shadow-premium transition focus:translate-y-0;
   }
 
   .primary-cta {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-coral px-6 py-3 text-sm font-black text-white shadow-lg shadow-coral/20 transition hover:-translate-y-0.5 hover:bg-charcoal disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-skybrand px-6 py-3 text-sm font-black text-white shadow-lg shadow-skybrand/25 transition hover:-translate-y-0.5 hover:bg-coral disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .secondary-cta {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-charcoal/15 bg-white px-6 py-3 text-sm font-black text-charcoal transition hover:-translate-y-0.5 hover:border-coral hover:text-coral;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-charcoal/15 bg-white px-6 py-3 text-sm font-black text-charcoal transition hover:-translate-y-0.5 hover:border-skybrand hover:text-skybrand;
   }
 
   .form-field {
-    @apply min-h-12 w-full rounded-lg border border-border bg-white px-4 py-3 font-bold text-charcoal outline-none transition placeholder:text-charcoal/35 focus:border-coral focus:shadow-glow;
+    @apply min-h-12 w-full rounded-lg border border-border bg-white px-4 py-3 font-bold text-charcoal outline-none transition placeholder:text-charcoal/35 focus:border-skybrand focus:shadow-glow;
   }
 }
 

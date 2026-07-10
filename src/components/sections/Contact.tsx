@@ -169,7 +169,7 @@ export default function Contact() {
                 required
               />
               <span>
-                I consent to Sam Creative Graphics using these details to respond to my enquiry.
+                I consent to SAM CREATIVE GRAPHICS BRAND AGENCY using these details to respond to my enquiry.
                 {errors.consent ? <span className="mt-1 block text-coral">{errors.consent}</span> : null}
               </span>
             </label>

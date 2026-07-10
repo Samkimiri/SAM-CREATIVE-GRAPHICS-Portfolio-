@@ -18,7 +18,7 @@ const config: Config = {
       },
       boxShadow: {
         premium: "0 24px 80px rgba(16, 18, 23, 0.12)",
-        glow: "0 24px 70px rgba(242, 78, 30, 0.22)",
+        glow: "0 24px 70px rgba(47, 156, 235, 0.22)",
       },
       borderRadius: {
         "2xl": "1.25rem",

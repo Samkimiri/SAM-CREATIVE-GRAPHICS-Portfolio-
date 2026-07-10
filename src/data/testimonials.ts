@@ -11,7 +11,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Sam Creative Graphics translated our rough idea into a brand that looked credible from day one. The process was strategic and very clear.",
+      "SAM CREATIVE GRAPHICS BRAND AGENCY translated our rough idea into a brand that looked credible from day one. The process was strategic and very clear.",
     role: "Startup founder",
     service: "Brand identity",
   },

@@ -62,17 +62,17 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src="/images/logo.jpg"
-            alt="Sam Creative Graphics"
+            alt="SAM CREATIVE GRAPHICS BRAND AGENCY"
             width={52}
             height={52}
             priority
             className="h-12 w-12 rounded-lg bg-white object-contain p-1 shadow-sm ring-1 ring-charcoal/10"
           />
           <div className="leading-tight">
-            <p className={`text-xs font-black uppercase tracking-wide sm:text-sm ${scrolled ? "text-charcoal" : "text-white"}`}>
-              Sam Creative
+            <p className={`max-w-[13rem] text-[0.68rem] font-black uppercase tracking-wide sm:max-w-none sm:text-xs ${scrolled ? "text-charcoal" : "text-white"}`}>
+              SAM CREATIVE GRAPHICS
             </p>
-            <p className="text-xs font-bold text-coral">Graphics</p>
+            <p className="text-[0.68rem] font-bold uppercase tracking-widest text-rainbow sm:text-xs">Brand Agency</p>
           </div>
         </Link>
 

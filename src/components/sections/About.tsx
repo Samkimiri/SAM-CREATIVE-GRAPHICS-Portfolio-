@@ -13,7 +13,7 @@ export default function About() {
             <h2 className="section-title mt-3">Design that is beautiful, practical, and built around business communication.</h2>
           </div>
           <p className="text-lg leading-8 text-charcoal/70">
-            Sam Creative Graphics brings together strategy, strong visual craft, and practical production thinking so each project is clear enough to use and polished enough to build confidence.
+            SAM CREATIVE GRAPHICS BRAND AGENCY brings together strategy, strong visual craft, and practical production thinking so each project is clear enough to use and polished enough to build confidence.
           </p>
         </div>
 
