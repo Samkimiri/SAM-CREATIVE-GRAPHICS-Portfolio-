@@ -247,7 +247,7 @@ export default function Contact() {
               <CheckCircle2 className="h-4 w-4" />
               Open for projects
             </p>
-            <p className="mt-2 text-sm leading-6 text-white/65">Phone: {site.phoneDisplay} / {site.altPhoneDisplay}</p>
+            <p className="mt-2 text-sm leading-6 text-white/65">Phone: {site.phoneDisplay}</p>
           </div>
         </aside>
       </div>

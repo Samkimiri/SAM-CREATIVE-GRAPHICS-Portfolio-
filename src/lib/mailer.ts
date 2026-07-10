@@ -16,7 +16,7 @@ export async function sendContactNotification(payload: ContactPayload) {
   });
 
   await transporter.sendMail({
-    to: process.env.CONTACT_TO_EMAIL || "samkimiri550307@gmail.com",
+    to: process.env.CONTACT_TO_EMAIL || "samcreativegraphics7@gmail.com",
     from: process.env.CONTACT_FROM_EMAIL || SMTP_USER,
     replyTo: payload.email,
     subject: `New ${payload.service} inquiry from ${payload.name}`,

@@ -23,10 +23,9 @@ export const site = {
   name: "SAM CREATIVE GRAPHICS BRAND AGENCY",
   tagline: "Where Creativity Meets Strategy",
   location: "Nairobi, Kenya",
-  email: "samkimiri550307@gmail.com",
-  phoneDisplay: "0743 475 247",
+  email: "samcreativegraphics7@gmail.com",
+  phoneDisplay: "0743475247",
   phoneHref: "tel:+254743475247",
-  altPhoneDisplay: "0748 201 131",
   whatsappUrl:
     "https://wa.me/254743475247?text=Hello%20SAM%20CREATIVE%20GRAPHICS%20BRAND%20AGENCY%2C%20I%20would%20like%20to%20discuss%20a%20design%20project.",
   catalogUrl: "https://wa.me/c/254743475247",
