@@ -15,7 +15,6 @@ import {
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
 import { site } from "@/data/site";
-import WhatsAppSamplePreview from "@/components/WhatsAppSamplePreview";
 
 const whatsappCatalogUrl = site.catalogUrl;
 
@@ -129,29 +128,6 @@ function PromoPoster({ title, category, index }: { title: string; category: stri
 
 export default async function Portfolio() {
   const portfolioItems = await getProjects();
-  const whatsappSamples = [
-    {
-      title: "Opening Ceremony Poster",
-      category: "Campaign Design",
-      description: "A public event poster sample with speaker focus, hierarchy and promotional structure.",
-      imageUrl: "/images/portfolio/whatsapp-catalog-preview.jpg",
-      imagePosition: "center",
-    },
-    {
-      title: "Design Workshop Direction",
-      category: "Brand Strategy",
-      description: "A creative workshop preview showing how visual systems, palettes and layouts are shaped.",
-      imageUrl: "/images/hero/design-workshop.png",
-      imagePosition: "center",
-    },
-    {
-      title: "Print and Packaging Preview",
-      category: "Print and Editorial",
-      description: "A production-focused preview for brochures, packaging, labels and print-ready artwork.",
-      imageUrl: "/images/hero/print-packaging.png",
-      imagePosition: "center",
-    },
-  ];
 
   return (
     <section id="portfolio" className="bg-soft py-16 sm:py-24">
@@ -165,7 +141,7 @@ export default async function Portfolio() {
           </div>
           <div className="max-w-sm">
             <p className="text-sm font-bold leading-6 text-charcoal/60">
-              Explore selected brand, campaign, print and digital work, then preview sample artwork before opening the full WhatsApp catalog.
+              Explore selected brand, campaign, print and digital work. Each portfolio image opens the full WhatsApp catalog directly.
             </p>
             <a
               href={whatsappCatalogUrl}
@@ -179,8 +155,6 @@ export default async function Portfolio() {
           </div>
         </div>
 
-        <WhatsAppSamplePreview samples={whatsappSamples} catalogUrl={whatsappCatalogUrl} />
-
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {portfolioItems.map((item, index) => {
             const CardIcon = cardIcons[index % cardIcons.length];
@@ -188,11 +162,15 @@ export default async function Portfolio() {
             return (
               <article
                 key={item.title}
-                className={`classic-hover group glass-card-light ${
-                  index === 1 || index === 4 ? "lg:translate-y-8" : ""
-                }`}
+                className="classic-hover group glass-card-light"
               >
-                <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${posterThemes[index % posterThemes.length].background} p-6`}>
+                <a
+                  href={whatsappCatalogUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${item.title} in the WhatsApp catalog`}
+                  className={`relative block h-64 overflow-hidden bg-gradient-to-br ${posterThemes[index % posterThemes.length].background} p-6`}
+                >
                   {item.imageUrl ? (
                     <PortfolioImage
                       src={item.imageUrl}
@@ -208,16 +186,14 @@ export default async function Portfolio() {
                       <CardIcon className="h-4 w-4" />
                       {item.category}
                     </span>
-                    <a
-                      href="#whatsapp-samples"
+                    <span
                       className="flex w-fit items-center gap-2 rounded-full bg-charcoal px-4 py-2 text-sm font-extrabold text-white opacity-0 transition group-hover:opacity-100"
-                      aria-label={`Preview samples before viewing ${item.title}`}
                     >
-                      View Case Study
+                      Open Catalog
                       <ArrowUpRight className="h-4 w-4" />
-                    </a>
+                    </span>
                   </div>
-                </div>
+                </a>
                 <div className="p-6">
                   <div className="flex items-center gap-3">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-skybrand/10 text-skybrand">
