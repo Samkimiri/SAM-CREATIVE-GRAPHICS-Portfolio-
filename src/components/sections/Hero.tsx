@@ -9,17 +9,54 @@ const stats = [
   ["4", "Core Services"],
 ];
 
+const heroImages = [
+  {
+    src: "/images/brand-agency-hero.png",
+    alt: "Brand agency studio with strategy boards, color swatches, typography work, and creative tools",
+    position: "64% center",
+  },
+  {
+    src: "/images/hero-brand-studio.jpg",
+    alt: "Modern graphic design studio workspace with brand boards, color palettes, and creative tools",
+    position: "68% center",
+  },
+  {
+    src: "/images/hero-print-production.jpg",
+    alt: "Premium print production table with branded packaging, flyers, brochures, and color proofs",
+    position: "70% center",
+  },
+  {
+    src: "/images/hero-digital-campaigns.jpg",
+    alt: "Digital branding workspace with campaign planning boards, devices, and color swatches",
+    position: "68% center",
+  },
+  {
+    src: "/images/hero-brand-launch.jpg",
+    alt: "Brand launch presentation table with signage samples, stationery, merch mockups, and print proofs",
+    position: "70% center",
+  },
+];
+
 export default function Hero() {
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-charcoal pt-28 text-white sm:pt-32">
-      <Image
-        src="/images/brand-agency-hero.png"
-        alt="Brand agency studio with strategy boards, color swatches, typography work, and creative tools"
-        fill
-        priority
-        sizes="100vw"
-        className="absolute inset-0 -z-20 object-cover object-[64%_center] sm:object-center"
-      />
+      <div className="absolute inset-0 -z-20">
+        {heroImages.map((image, index) => (
+          <Image
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            className="hero-slide absolute inset-0 object-cover sm:object-center"
+            style={{
+              animationDelay: `${index * 5 - 1}s`,
+              objectPosition: image.position,
+            }}
+          />
+        ))}
+      </div>
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(16,18,23,0.88)_0%,rgba(16,18,23,0.76)_42%,rgba(16,18,23,0.6)_100%)] sm:bg-[linear-gradient(90deg,rgba(16,18,23,0.94)_0%,rgba(16,18,23,0.82)_38%,rgba(16,18,23,0.48)_70%,rgba(16,18,23,0.28)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-44 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />
 

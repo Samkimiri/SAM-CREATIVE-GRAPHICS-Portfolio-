@@ -66,3 +66,40 @@ textarea {
     @apply transition duration-300 hover:-translate-y-0.5 hover:text-skybrand;
   }
 }
+
+.hero-slide {
+  animation: hero-slide-show 25s ease-in-out infinite;
+  opacity: 0;
+  transform: scale(1.04) translateX(1.5rem);
+}
+
+@keyframes hero-slide-show {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1.04) translateX(1.5rem);
+  }
+
+  4%,
+  20% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+
+  24% {
+    opacity: 0;
+    transform: scale(1.02) translateX(-1rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation: none;
+    opacity: 0;
+    transform: none;
+  }
+
+  .hero-slide:first-child {
+    opacity: 1;
+  }
+}
