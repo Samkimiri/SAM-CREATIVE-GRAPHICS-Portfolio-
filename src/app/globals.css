@@ -123,6 +123,120 @@ textarea {
   transform: scale(1.04);
 }
 
+.phone-preview-shell {
+  position: relative;
+  z-index: 2;
+  transform: rotateX(8deg) rotateZ(-4deg);
+  animation: phone-float 7s ease-in-out infinite;
+}
+
+.phone-preview-frame {
+  position: relative;
+  width: min(76vw, 292px);
+  aspect-ratio: 9 / 18.5;
+  border: 10px solid #06080d;
+  border-radius: 38px;
+  background: #06080d;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.48), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.phone-preview-speaker {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  z-index: 4;
+  height: 5px;
+  width: 58px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.phone-preview-screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #111318;
+}
+
+.phone-preview-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.08);
+  animation: phone-slide-show 16s ease-in-out infinite;
+}
+
+.phone-orbit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  animation: orbit-slow-spin 28s linear infinite;
+}
+
+.phone-orbit-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: max-content;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.7rem 0.95rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.73rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  backdrop-filter: blur(18px);
+  animation: orbit-chip-counter 28s linear infinite;
+}
+
+.phone-orbit-chip-1 {
+  left: 3%;
+  top: 12%;
+}
+
+.phone-orbit-chip-2 {
+  right: 0;
+  top: 20%;
+}
+
+.phone-orbit-chip-3 {
+  left: 0;
+  top: 48%;
+}
+
+.phone-orbit-chip-4 {
+  right: 3%;
+  top: 58%;
+}
+
+.phone-orbit-chip-5 {
+  left: 11%;
+  bottom: 11%;
+}
+
+.phone-orbit-chip-6 {
+  right: 12%;
+  bottom: 8%;
+}
+
+.visual-marquee {
+  overflow: hidden;
+}
+
+.visual-marquee-track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  gap: 3rem;
+  animation: visual-marquee-scroll 28s linear infinite;
+}
+
 @keyframes hero-slide-show {
   0%,
   18% {
@@ -134,6 +248,49 @@ textarea {
   100% {
     opacity: 0;
     transform: scale(1.04);
+  }
+}
+
+@keyframes phone-slide-show {
+  0%,
+  17% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes phone-float {
+  0%,
+  100% {
+    transform: rotateX(8deg) rotateZ(-4deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateX(8deg) rotateZ(-4deg) translateY(-14px);
+  }
+}
+
+@keyframes orbit-slow-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-chip-counter {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes visual-marquee-scroll {
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -159,5 +316,17 @@ textarea {
 
   .hero-slide:first-child {
     opacity: 1;
+  }
+
+  .phone-preview-shell,
+  .phone-orbit,
+  .phone-orbit-chip,
+  .visual-marquee-track {
+    animation: none;
+  }
+
+  .phone-preview-slide:first-child {
+    opacity: 1;
+    transform: none;
   }
 }

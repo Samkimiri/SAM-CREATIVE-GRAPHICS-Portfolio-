@@ -9,6 +9,7 @@ import Process from "@/components/sections/Process";
 import ProjectReadiness from "@/components/sections/ProjectReadiness";
 import Services from "@/components/sections/Services";
 import Testimonials from "@/components/sections/Testimonials";
+import VisualExperience from "@/components/sections/VisualExperience";
 import { faqs } from "@/data/faqs";
 import { site } from "@/data/site";
 
@@ -57,6 +58,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero />
       <BusinessQuotes />
+      <VisualExperience />
       <Portfolio />
       <Services />
       <About />
