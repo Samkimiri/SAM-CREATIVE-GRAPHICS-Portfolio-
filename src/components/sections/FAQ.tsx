@@ -1,61 +1,56 @@
-import { HelpCircle } from "lucide-react";
+"use client";
 
-const faqs = [
-  {
-    question: "What kind of businesses do you work with?",
-    answer:
-      "We work with startups, SMEs, corporates, NGOs, churches, events, and personal brands that need sharper design, clearer messaging, and consistent visual communication.",
-  },
-  {
-    question: "Can you build a full brand identity from scratch?",
-    answer:
-      "Yes. A full identity can include logo direction, color palette, typography, brand guidelines, social templates, stationery, campaign visuals, and launch-ready digital assets.",
-  },
-  {
-    question: "Do you only design, or do you also help with strategy?",
-    answer:
-      "Strategy is part of the process. Before designing, we clarify your audience, offer, positioning, tone, and the channels where the brand needs to perform.",
-  },
-  {
-    question: "How long does a typical project take?",
-    answer:
-      "Timelines depend on scope. Smaller design tasks can move quickly, while full brand systems and campaign packages need more discovery, concept development, and review time.",
-  },
-  {
-    question: "How do we start a project?",
-    answer:
-      "Send a brief through the contact form or WhatsApp with your goals, deadline, and examples of what you like. We will respond with the next steps, scope, and quote.",
-  },
-];
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { faqs } from "@/data/faqs";
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState(0);
+
   return (
     <section id="faq" className="bg-soft py-16 sm:py-24">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="text-sm font-black uppercase tracking-widest text-skybrand">FAQ</p>
-          <h2 className="section-title mt-3">
-            Clear answers before we start building your brand.
-          </h2>
+          <p className="text-sm font-black uppercase tracking-widest text-coral">FAQ</p>
+          <h2 className="section-title mt-3">Clear answers before we start building your brand.</h2>
           <p className="mt-5 text-lg leading-8 text-charcoal/70">
-            A few practical details about our process, deliverables, and how we turn creative ideas into useful brand assets.
+            Practical details about scope, timelines and how we turn a brief into useful brand assets.
           </p>
         </div>
 
-        <div className="grid gap-4">
-          {faqs.map((item) => (
-            <article key={item.question} className="group glass-card-light modern-hover p-5 sm:p-6">
-              <div className="flex gap-4">
-                <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-skybrand/10 text-skybrand transition duration-300 group-hover:bg-skybrand group-hover:text-white">
-                  <HelpCircle className="h-5 w-5" />
+        <div className="grid gap-3">
+          {faqs.map((item, index) => {
+            const isOpen = openIndex === index;
+            const panelId = `faq-panel-${index}`;
+            const buttonId = `faq-button-${index}`;
+
+            return (
+              <article key={item.question} className="rounded-lg border border-border bg-white shadow-sm">
+                <h3>
+                  <button
+                    id={buttonId}
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-lg font-black text-charcoal sm:px-6"
+                  >
+                    {item.question}
+                    <ChevronDown className={`h-5 w-5 shrink-0 text-coral transition ${isOpen ? "rotate-180" : ""}`} />
+                  </button>
+                </h3>
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  hidden={!isOpen}
+                  className="px-5 pb-5 leading-7 text-charcoal/70 sm:px-6"
+                >
+                  {item.answer}
                 </div>
-                <div>
-                  <h3 className="text-xl font-black text-charcoal">{item.question}</h3>
-                  <p className="mt-3 leading-7 text-charcoal/70">{item.answer}</p>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

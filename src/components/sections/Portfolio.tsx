@@ -14,9 +14,10 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
+import { site } from "@/data/site";
 import WhatsAppSamplePreview from "@/components/WhatsAppSamplePreview";
 
-const whatsappCatalogUrl = "https://wa.me/c/254743475247";
+const whatsappCatalogUrl = site.catalogUrl;
 
 const posterThemes: {
   Icon: LucideIcon;
@@ -148,7 +149,7 @@ export default async function Portfolio() {
           </div>
           <div className="max-w-sm">
             <p className="text-sm font-bold leading-6 text-charcoal/60">
-              Browse selected uploads here, or open the full WhatsApp catalog for the latest project photos and design samples.
+              Explore selected brand, campaign, print and digital work, then preview sample artwork before opening the full WhatsApp catalog.
             </p>
             <a
               href={whatsappCatalogUrl}
@@ -194,9 +195,9 @@ export default async function Portfolio() {
                     <a
                       href="#whatsapp-samples"
                       className="flex w-fit items-center gap-2 rounded-full bg-charcoal px-4 py-2 text-sm font-extrabold text-white opacity-0 transition group-hover:opacity-100"
-                      aria-label={`Preview WhatsApp samples before viewing ${item.title} in the catalog`}
+                      aria-label={`Preview samples before viewing ${item.title}`}
                     >
-                      Preview First
+                      View Case Study
                       <ArrowUpRight className="h-4 w-4" />
                     </a>
                   </div>

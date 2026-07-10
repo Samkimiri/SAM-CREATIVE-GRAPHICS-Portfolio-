@@ -22,9 +22,13 @@ export async function sendContactNotification(payload: ContactPayload) {
     subject: `New ${payload.service} inquiry from ${payload.name}`,
     text: [
       `Name: ${payload.name}`,
+      `Business / Organisation: ${payload.organisation || "Not provided"}`,
       `Email: ${payload.email}`,
       `Phone: ${payload.phone}`,
       `Service: ${payload.service}`,
+      `Estimated budget: ${payload.budget}`,
+      `Desired completion date: ${payload.completionDate || "Not provided"}`,
+      `Heard about us: ${payload.heardAbout || "Not provided"}`,
       "",
       payload.message,
     ].join("\n"),

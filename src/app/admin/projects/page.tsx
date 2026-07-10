@@ -4,6 +4,10 @@ import ProjectUploader from "@/components/ProjectUploader";
 export const metadata: Metadata = {
   title: "Project Upload Admin",
   description: "Owner dashboard for uploading Sam Creative Graphics portfolio projects.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function AdminProjectsPage() {

@@ -5,19 +5,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        skybrand: "#2F9CEB",
-        cobalt: "#0B5BD3",
+        skybrand: "#5B2EFF",
+        cobalt: "#5B2EFF",
         coral: "#F24E1E",
         rainbow: "#FFB624",
-        aqua: "#14C7E8",
+        aqua: "#00B37E",
         lime: "#00B37E",
-        charcoal: "#101217",
-        ink: "#1F2937",
-        soft: "#F4FAFF",
+        charcoal: "#111318",
+        ink: "#34373F",
+        soft: "#F8F8F6",
+        border: "#E6E6E2",
       },
       boxShadow: {
         premium: "0 24px 80px rgba(16, 18, 23, 0.12)",
-        glow: "0 24px 70px rgba(47, 156, 235, 0.22)",
+        glow: "0 24px 70px rgba(242, 78, 30, 0.22)",
       },
       borderRadius: {
         "2xl": "1.25rem",

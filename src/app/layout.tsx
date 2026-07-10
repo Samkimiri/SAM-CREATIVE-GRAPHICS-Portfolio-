@@ -1,18 +1,38 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { site } from "@/data/site";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sam-creative-graphics.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || site.url;
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sam Creative Graphics | Brand Design Agency in Nairobi",
+    default: "Branding & Graphic Design Agency Nairobi | Sam Creative Graphics",
     template: "%s | Sam Creative Graphics",
   },
   description:
-    "Sam Creative Graphics is a Nairobi brand design agency for startups, SMEs, corporates, NGOs, and East African businesses.",
+    "Sam Creative Graphics is a Nairobi design agency creating brand identities, campaign graphics, packaging, print materials and websites for businesses across Kenya and East Africa.",
+  alternates: {
+    canonical: siteUrl,
+  },
   keywords: [
     "Sam Creative Graphics",
     "Brand design Nairobi",
@@ -22,7 +42,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Sam Creative Graphics",
-    description: "Where Creativity Meets Strategy. Premium brand design, campaigns, print, packaging, UI/UX, and web design.",
+    description:
+      "Nairobi brand design agency creating brand identities, campaign graphics, packaging, print materials and websites.",
     url: siteUrl,
     siteName: "Sam Creative Graphics",
     images: [{ url: "/images/logo.jpg", width: 1080, height: 1080, alt: "Sam Creative Graphics logo" }],
@@ -31,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sam Creative Graphics",
+    title: "Branding & Graphic Design Agency Nairobi | Sam Creative Graphics",
     description: "Premium brand design agency in Nairobi, Kenya.",
     images: ["/images/logo.jpg"],
   },
@@ -39,15 +60,25 @@ export const metadata: Metadata = {
     icon: "/images/logo.jpg",
     apple: "/images/logo.jpg",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${jakarta.variable} ${inter.variable}`}>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

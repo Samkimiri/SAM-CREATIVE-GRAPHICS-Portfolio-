@@ -15,11 +15,11 @@ body {
   margin: 0;
   background: #ffffff;
   color: #141217;
-  font-family: Inter, "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 ::selection {
-  background: #2f9ceb;
+  background: #f24e1e;
   color: white;
 }
 
@@ -35,9 +35,23 @@ textarea {
     scroll-padding-top: 92px;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+
   a,
   button {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 3px solid #ffb624;
+    outline-offset: 3px;
   }
 }
 
@@ -47,7 +61,7 @@ textarea {
   }
 
   .section-title {
-    @apply text-3xl font-black tracking-tight text-charcoal sm:text-4xl md:text-5xl;
+    @apply text-[clamp(2rem,4vw,3.75rem)] font-black leading-[1.02] tracking-tight text-charcoal;
   }
 
   .glass-card {
@@ -64,6 +78,22 @@ textarea {
 
   .link-hover {
     @apply transition duration-300 hover:-translate-y-0.5 hover:text-skybrand;
+  }
+
+  .skip-link {
+    @apply fixed left-4 top-3 z-[100] -translate-y-20 rounded-full bg-coral px-5 py-3 text-sm font-black text-white shadow-premium transition focus:translate-y-0;
+  }
+
+  .primary-cta {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-coral px-6 py-3 text-sm font-black text-white shadow-lg shadow-coral/20 transition hover:-translate-y-0.5 hover:bg-charcoal disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .secondary-cta {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-charcoal/15 bg-white px-6 py-3 text-sm font-black text-charcoal transition hover:-translate-y-0.5 hover:border-coral hover:text-coral;
+  }
+
+  .form-field {
+    @apply min-h-12 w-full rounded-lg border border-border bg-white px-4 py-3 font-bold text-charcoal outline-none transition placeholder:text-charcoal/35 focus:border-coral focus:shadow-glow;
   }
 }
 
@@ -93,6 +123,19 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
   .hero-slide {
     animation: none;
     opacity: 0;

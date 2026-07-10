@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Quote } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
@@ -13,16 +13,14 @@ export default function Testimonials() {
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <article key={testimonial.name} className="glass-card modern-hover p-6">
-              <div className="mb-6 flex gap-1 text-rainbow">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star key={index} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
+            <article key={testimonial.quote} className="rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-sm">
+              <Quote className="mb-6 h-8 w-8 text-rainbow" />
               <p className="leading-7 text-white/80">&quot;{testimonial.quote}&quot;</p>
               <div className="mt-8">
-                <p className="font-black">{testimonial.name}</p>
-                <p className="text-sm font-bold text-white/50">{testimonial.role}</p>
+                <p className="font-black">{testimonial.name || "Verified client"}</p>
+                <p className="text-sm font-bold text-white/50">
+                  {[testimonial.role, testimonial.organisation, testimonial.service].filter(Boolean).join(" · ")}
+                </p>
               </div>
             </article>
           ))}
