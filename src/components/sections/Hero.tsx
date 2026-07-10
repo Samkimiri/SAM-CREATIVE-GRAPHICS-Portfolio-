@@ -72,6 +72,9 @@ export default function Hero() {
             <a href="#portfolio" className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-charcoal">
               Explore Our Work
             </a>
+            <a href="#about" className="inline-flex min-h-11 items-center justify-center rounded-full border border-skybrand/50 bg-skybrand/15 px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-skybrand">
+              About the Agency
+            </a>
           </div>
           <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 text-sm font-extrabold text-white/90">
             <BadgeCheck className="h-5 w-5 text-lime" />
