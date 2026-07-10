@@ -18,7 +18,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Flash Sale Campaign",
     category: "Promotional Poster",
     description: "A bright retail promotion concept built for fast attention, clear offers, and social media conversion.",
-    colors: "from-cobalt to-coral",
+    colors: "from-cobalt to-skybrand",
   },
   {
     title: "Creative Summit Poster",
@@ -42,6 +42,6 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Concert Night Artwork",
     category: "Entertainment Poster",
     description: "A bold nightlife campaign layout with motion, contrast, and punchy visual elements for digital promotion.",
-    colors: "from-coral to-rainbow",
+    colors: "from-skybrand to-rainbow",
   },
 ];

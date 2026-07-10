@@ -36,7 +36,7 @@ const posterThemes: {
   {
     Icon: BadgePercent,
     badge: "Promo",
-    background: "from-coral via-rainbow to-aqua",
+    background: "from-skybrand via-rainbow to-aqua",
     accent: "bg-white",
     secondary: "bg-lime",
   },
@@ -44,13 +44,13 @@ const posterThemes: {
     Icon: CalendarDays,
     badge: "Event",
     background: "from-charcoal via-cobalt to-aqua",
-    accent: "bg-coral",
+    accent: "bg-skybrand",
     secondary: "bg-rainbow",
   },
   {
     Icon: Utensils,
     badge: "Launch",
-    background: "from-coral via-charcoal to-rainbow",
+    background: "from-skybrand via-charcoal to-rainbow",
     accent: "bg-aqua",
     secondary: "bg-white",
   },
@@ -64,7 +64,7 @@ const posterThemes: {
   {
     Icon: Music2,
     badge: "Nightlife",
-    background: "from-charcoal via-coral to-cobalt",
+    background: "from-charcoal via-skybrand to-cobalt",
     accent: "bg-aqua",
     secondary: "bg-rainbow",
   },

@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         skybrand: "#2F9CEB",
         cobalt: "#0B5BD3",
-        coral: "#F24E1E",
+        coral: "#2F9CEB",
         rainbow: "#FFB624",
         aqua: "#14C7E8",
         lime: "#00B37E",

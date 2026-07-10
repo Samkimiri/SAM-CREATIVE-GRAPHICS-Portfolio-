@@ -73,7 +73,7 @@ export const services: Service[] = [
     slug: "brand-identity-strategy",
     description: "Logo design, visual identity systems, brand guidelines, stationery and launch-ready assets.",
     deliverables: ["Logo systems", "Brand guidelines", "Stationery", "Launch assets"],
-    accent: "#F24E1E",
+    accent: "#2F9CEB",
     Icon: Brush,
   },
   {

@@ -55,8 +55,8 @@ export default function Hero() {
 
       <div className="section-shell flex min-h-[calc(100vh-7rem)] items-center pb-14 pt-8">
         <div className="max-w-4xl">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-widest text-rainbow">
-            Nairobi Brand Design Agency
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-skybrand/40 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-widest text-skybrand shadow-lg shadow-skybrand/15">
+            SAM CREATIVE GRAPHICS
           </p>
           <h1 className="max-w-5xl text-[clamp(2.45rem,6.4vw,5.8rem)] font-black leading-[0.98] tracking-tight">
             Strategic design that makes your business look credible, communicate clearly, and sell confidently.
