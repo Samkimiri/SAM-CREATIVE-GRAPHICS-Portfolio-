@@ -48,7 +48,7 @@ export default function WhatsAppSamplePreview({
             key={sample.title}
             type="button"
             onClick={() => setActiveSample(sample)}
-            className="group overflow-hidden rounded-lg bg-white text-left shadow-sm ring-1 ring-charcoal/10 transition hover:-translate-y-1 hover:shadow-premium"
+            className="classic-hover group rounded-lg bg-white text-left shadow-sm ring-1 ring-charcoal/10"
             aria-label={`Preview ${sample.title}`}
           >
             <span className="relative block aspect-[4/5] overflow-hidden bg-charcoal">

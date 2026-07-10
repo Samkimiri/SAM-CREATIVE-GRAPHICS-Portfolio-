@@ -188,7 +188,7 @@ export default async function Portfolio() {
             return (
               <article
                 key={item.title}
-                className={`group glass-card-light overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-premium ${
+                className={`classic-hover group glass-card-light ${
                   index === 1 || index === 4 ? "lg:translate-y-8" : ""
                 }`}
               >

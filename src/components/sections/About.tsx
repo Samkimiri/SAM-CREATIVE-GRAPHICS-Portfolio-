@@ -19,7 +19,7 @@ export default function About() {
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {differentiators.map(({ title, description, Icon }) => (
-            <article key={title} className="rounded-lg border border-border bg-white p-6 shadow-sm">
+            <article key={title} className="classic-hover rounded-lg border border-border bg-white p-6 shadow-sm">
               <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-coral/10 text-coral">
                 <Icon className="h-6 w-6" />
               </div>

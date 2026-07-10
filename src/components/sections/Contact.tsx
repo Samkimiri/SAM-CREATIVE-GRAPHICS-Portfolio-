@@ -204,7 +204,7 @@ export default function Contact() {
                   if (label === "Call") track("phone_click", { location: "contact_panel" });
                   if (label === "Email") track("email_click", { location: "contact_panel" });
                 }}
-                className="flex min-h-14 items-center gap-4 rounded-lg border border-white/10 bg-white/8 p-4 transition hover:border-coral/50 hover:bg-white/12"
+                className="classic-hover flex min-h-14 items-center gap-4 rounded-lg border border-white/10 bg-white/8 p-4"
               >
                 <Icon className="h-5 w-5 shrink-0 text-rainbow" />
                 <span>

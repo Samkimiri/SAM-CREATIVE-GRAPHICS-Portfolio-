@@ -16,7 +16,7 @@ export default function Services() {
             <article
               key={title}
               id={slug}
-              className="group rounded-lg border border-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-premium sm:p-7"
+              className="classic-hover group rounded-lg border border-border bg-white p-6 shadow-sm sm:p-7"
             >
               <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-lg text-white shadow-lg transition duration-300 group-hover:scale-105" style={{ backgroundColor: accent }}>
                 <Icon className="h-7 w-7 transition duration-300 group-hover:rotate-3" />

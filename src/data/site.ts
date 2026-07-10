@@ -45,8 +45,8 @@ export const navigation = [
 
 export const stats = [
   { value: "150+", label: "Projects", Icon: FileCheck2 },
-  { value: "80+", label: "Clients", Icon: Users },
-  { value: "7+", label: "Years", Icon: Clock3 },
+  { value: "50+", label: "Clients", Icon: Users },
+  { value: "2+", label: "Years", Icon: Clock3 },
   { value: "Nairobi", label: "Kenya", Icon: MapPin },
 ];
 

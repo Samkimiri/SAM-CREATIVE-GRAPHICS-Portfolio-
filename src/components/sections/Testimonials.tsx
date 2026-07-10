@@ -13,7 +13,7 @@ export default function Testimonials() {
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <article key={testimonial.quote} className="rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-sm">
+            <article key={testimonial.quote} className="classic-hover rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-sm">
               <Quote className="mb-6 h-8 w-8 text-rainbow" />
               <p className="leading-7 text-white/80">&quot;{testimonial.quote}&quot;</p>
               <div className="mt-8">

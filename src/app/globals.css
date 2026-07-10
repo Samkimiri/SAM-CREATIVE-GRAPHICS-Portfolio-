@@ -76,6 +76,26 @@ textarea {
     @apply transition duration-300 hover:-translate-y-1 hover:border-skybrand/40 hover:shadow-premium;
   }
 
+  .classic-hover {
+    @apply relative overflow-hidden transition duration-300 ease-out hover:-translate-y-1 hover:border-skybrand/35 hover:shadow-premium;
+  }
+
+  .classic-hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.34) 42%, transparent 70%);
+    opacity: 0;
+    transform: translateX(-120%);
+    transition: opacity 300ms ease, transform 700ms ease;
+  }
+
+  .classic-hover:hover::after {
+    opacity: 1;
+    transform: translateX(120%);
+  }
+
   .link-hover {
     @apply transition duration-300 hover:-translate-y-0.5 hover:text-skybrand;
   }
