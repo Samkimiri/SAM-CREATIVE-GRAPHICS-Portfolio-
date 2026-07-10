@@ -8,7 +8,10 @@ export async function GET() {
       title: service.title,
       slug: service.slug,
       description: service.description,
+      bestFor: service.bestFor,
+      approach: service.approach,
       deliverables: service.deliverables,
+      outcomes: service.outcomes,
       accent: service.accent,
     })),
   });

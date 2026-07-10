@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Lightbulb, PackageCheck, Sparkles, Target } from "lucide-react";
 import { useState } from "react";
 import { services } from "@/data/services";
 
@@ -20,7 +20,7 @@ export default function Services() {
             </h2>
           </div>
           <p className="max-w-3xl text-lg font-light leading-8 text-charcoal/70">
-            Explore each service area, review typical deliverables, then start a focused request with the right context.
+            Not sure what to ask for? Select a service to see who it is for, what we do, what you receive, and how it helps your business.
           </p>
         </div>
 
@@ -47,7 +47,12 @@ export default function Services() {
                     <span className={`inline-flex h-11 w-11 items-center justify-center rounded-lg ${isActive ? "bg-white/15" : "bg-white text-skybrand"}`}>
                       <Icon className="h-5 w-5" />
                     </span>
-                    <span className="font-black">{title}</span>
+                    <span>
+                      <span className="block font-black">{title}</span>
+                      <span className={`mt-1 block text-xs font-light leading-5 ${isActive ? "text-white/75" : "text-charcoal/55"}`}>
+                        Click to understand this service
+                      </span>
+                    </span>
                   </span>
                   <ArrowRight className={`h-4 w-4 transition ${isActive ? "translate-x-1" : ""}`} />
                 </button>
@@ -69,13 +74,61 @@ export default function Services() {
               </a>
             </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {activeService.deliverables.map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-lg border border-border bg-soft p-4">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
-                  <span className="text-sm font-bold text-charcoal/75">{item}</span>
+            <div className="mt-8 rounded-lg border border-skybrand/15 bg-skybrand/5 p-5">
+              <div className="flex gap-4">
+                <Target className="mt-1 h-5 w-5 shrink-0 text-skybrand" />
+                <div>
+                  <p className="text-sm font-black uppercase tracking-widest text-skybrand">Best for</p>
+                  <p className="mt-2 font-light leading-7 text-charcoal/70">{activeService.bestFor}</p>
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 lg:grid-cols-2">
+              <div className="rounded-lg border border-border bg-soft p-5">
+                <div className="mb-4 flex items-center gap-3">
+                  <Lightbulb className="h-5 w-5 text-skybrand" />
+                  <h4 className="font-black text-charcoal">What we do</h4>
+                </div>
+                <div className="grid gap-3">
+                  {activeService.approach.map((item) => (
+                    <p key={item} className="flex gap-3 text-sm font-light leading-6 text-charcoal/70">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-lime" />
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-lg border border-border bg-soft p-5">
+                <div className="mb-4 flex items-center gap-3">
+                  <Sparkles className="h-5 w-5 text-skybrand" />
+                  <h4 className="font-black text-charcoal">How it helps</h4>
+                </div>
+                <div className="grid gap-3">
+                  {activeService.outcomes.map((item) => (
+                    <p key={item} className="flex gap-3 text-sm font-light leading-6 text-charcoal/70">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-lime" />
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <div className="mb-4 flex items-center gap-3">
+                <PackageCheck className="h-5 w-5 text-skybrand" />
+                <h4 className="font-black text-charcoal">What you may receive</h4>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {activeService.deliverables.map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-lg border border-border bg-soft p-4">
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
+                    <span className="text-sm font-bold text-charcoal/75">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="mt-8 rounded-lg border border-skybrand/15 bg-skybrand/5 p-5">
