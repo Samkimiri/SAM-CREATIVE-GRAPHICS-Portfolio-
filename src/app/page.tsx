@@ -1,8 +1,11 @@
 import About from "@/components/sections/About";
 import BusinessQuotes from "@/components/sections/BusinessQuotes";
 import Contact from "@/components/sections/Contact";
+import CreativeMarquee from "@/components/sections/CreativeMarquee";
 import CTASection from "@/components/sections/CTASection";
 import FAQ from "@/components/sections/FAQ";
+import FeaturedCaseStudy from "@/components/sections/FeaturedCaseStudy";
+import FeaturedClients from "@/components/sections/FeaturedClients";
 import Hero from "@/components/sections/Hero";
 import Portfolio from "@/components/sections/Portfolio";
 import Process from "@/components/sections/Process";
@@ -57,8 +60,11 @@ export default function Home() {
     <main id="main-content">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero />
+      <CreativeMarquee />
       <BusinessQuotes />
       <VisualExperience />
+      <FeaturedClients />
+      <FeaturedCaseStudy />
       <Portfolio />
       <Services />
       <About />

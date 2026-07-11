@@ -237,6 +237,41 @@ textarea {
   animation: visual-marquee-scroll 28s linear infinite;
 }
 
+.creative-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  animation: creative-marquee-scroll 30s linear infinite;
+}
+
+.featured-client-strip {
+  overflow: hidden;
+}
+
+.featured-client-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: featured-client-scroll 34s linear infinite;
+}
+
+.featured-client-logo {
+  display: inline-flex;
+  min-width: 178px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e6e6e2;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem 1.25rem;
+  color: rgba(17, 19, 24, 0.72);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  box-shadow: 0 18px 50px rgba(16, 18, 23, 0.06);
+}
+
 @keyframes hero-slide-show {
   0%,
   18% {
@@ -294,6 +329,18 @@ textarea {
   }
 }
 
+@keyframes creative-marquee-scroll {
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes featured-client-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
@@ -321,7 +368,9 @@ textarea {
   .phone-preview-shell,
   .phone-orbit,
   .phone-orbit-chip,
-  .visual-marquee-track {
+  .visual-marquee-track,
+  .creative-marquee-track,
+  .featured-client-track {
     animation: none;
   }
 
